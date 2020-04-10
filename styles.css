@@ -4,6 +4,7 @@
 body{
   background-color: #F4FAFF;
   margin: 0;
+  font-family: Roboto;
 }
 
 p {
@@ -63,4 +64,27 @@ p {
   font-weight: 900;
   font-size: 64px;
   margin: 32px 0 0 16px;
+}
+
+.body-1 {
+  font-family: Roboto;
+  font-weight: 400;
+  margin: 24px 0 0 64px;
+  font-size: 18px;
+}
+
+span {
+    font-weight: 900;
+}
+
+.links {
+  margin: 24px 0 0 64px;
+  display: flex;
+  justify-content: space-around;
+}
+
+a {
+    font-weight: 400;
+    font-size: 18px;
+    color: #444E56;
 }
