@@ -7,8 +7,49 @@ body {
   overflow: hidden;
 }
 
+h1 {
+  color: #444E56;
+}
+
+h2 {
+  color: #444E56;
+}
+
+h3 {
+  color: #444E56;
+}
+
 p {
   color: #444E56;
+}
+
+ul {
+  color: #444E56;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #E6F1FA;
+}
+
+.project-isuna ::-webkit-scrollbar-thumb {
+  background: #F9467C;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #A7BFD3;
 }
 
 .container-horizontal {
@@ -174,7 +215,6 @@ span {
   opacity: 24%;
 }
 
-
 .add-title-1 {
   font-family: Roboto;
   font-weight: 400;
@@ -200,10 +240,163 @@ span {
   font-size: 14px;
 }
 
-.selected-projects .a-sub{
+.selected-projects .a-sub {
   margin-left: 22px;
 }
 
 .selected-projects {
   margin-top: 96px;
+}
+
+.project {
+  width: 85%;
+  height: 768px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: fixed;
+  background-color: white;
+  z-index: 1;
+}
+
+.inactive {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.scroll {
+    overflow: scroll;
+    height: 768px;
+}
+
+.isuna {
+  cursor: pointer;
+}
+
+.project-header-container {
+  width: 968px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 72px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid;
+  margin-bottom: 56px;
+}
+
+.project-isuna .project-header-container {
+  border-color: #F9467C;
+}
+
+.project-title {
+  width: 70%;
+}
+
+.project-details {
+  width: 30%;
+}
+
+.exit {
+  width: 24px;
+  padding: 24px 24px 24px 24px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+.project-title h1 {
+  font-size: 48px;
+  margin: 64px 0 0 40px;
+}
+
+.project-isuna h2 {
+  color: #F9467C;
+}
+
+.project-title h2 {
+  font-size: 24px;
+  margin: 32px 0 0 40px;
+  font-weight: 400;
+}
+
+.project-title p {
+  font-size: 14px;
+  margin: 8px 0 0 40px;
+  font-weight: 300;
+  width: 63%;
+  line-height: 26px;
+}
+
+.project-details {
+  height: 360px;
+  border-left: 1px solid;
+}
+
+.project-details h3 {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 16px 0 0 16px;
+}
+
+.project-details p {
+  font-size: 14px;
+  font-weight: 300;
+  margin: 4px 0 4px 16px;
+}
+
+.project-isuna .project-details h3 {
+  color: #F9467C;
+}
+
+.project-isuna .project-details {
+  border-color: #F9467C;
+}
+
+.project-content-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.project-content-container h2 {
+  font-size: 24px;
+  margin: 32px 0 0 0;
+  font-weight: 400;
+}
+
+.project-content-container  p {
+  font-size: 14px;
+  margin: 8px 0 0 0;
+  line-height: 26px;
+  font-weight: 300;
+}
+
+ul {
+  font-size: 14px;
+  margin: 16px 0 0 0;
+  line-height: 26px;
+  font-weight: 300;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li{
+  margin-top: 8px;
+}
+
+ul li::before {
+  content: "\2022";
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.project-isuna ul li:before{
+  color: #F9467C;
 }
