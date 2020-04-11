@@ -306,6 +306,7 @@ span {
   position: absolute;
   right: 0px;
   top: 0px;
+cursor: pointer;
 }
 
 .project-title h1 {
@@ -324,7 +325,7 @@ span {
 }
 
 .project-title p {
-  font-size: 14px;
+  font-size: 16px;
   margin: 8px 0 0 40px;
   font-weight: 300;
   width: 63%;
@@ -368,14 +369,14 @@ span {
 }
 
 .project-content-container  p {
-  font-size: 14px;
+  font-size: 16px;
   margin: 8px 0 0 0;
   line-height: 26px;
   font-weight: 300;
 }
 
 ul {
-  font-size: 14px;
+  font-size: 16px;
   margin: 16px 0 0 0;
   line-height: 26px;
   font-weight: 300;
@@ -398,5 +399,9 @@ ul li::before {
 }
 
 .project-isuna ul li:before{
+  color: #F9467C;
+}
+
+.project-isuna span{
   color: #F9467C;
 }

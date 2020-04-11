@@ -2,9 +2,21 @@ $(document).ready(function() {
   $(".isuna").click(function(e) {
 
     $(".project-isuna").removeClass('inactive');
-    $(this).addClass('active');
+    $(".project-isuna").addClass('active');
     e.preventDefault();
 
 
   });
+
+  $(".exit-project").click(function(e) {
+
+    $(".project").removeClass('active');
+    $(".project").addClass('inactive');
+    e.preventDefault();
+
+
+  });
+
+
+
 });
