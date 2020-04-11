@@ -19,7 +19,6 @@ p {
 }
 
 .container-vertical {
-  height: 700px;
   width: 100%;
   padding: 0 40px 0 40px;
   display: flex;
@@ -34,7 +33,6 @@ p {
 
 .additional {
   width: 467px;
-  height: 605px;
 }
 
 .logo {
@@ -90,32 +88,83 @@ span {
   margin-left: 40px;
 }
 
-.accomplishments {
+.additional-section {
   margin-top: 20px;
   display: flex;
   font-weight: 300;
 }
 
-.accomplishments>p {
+.additional-section>p {
   margin: 124px 0 8px 0;
   transform: rotate(-90deg);
   transform-origin: 0% 0%;
   width: 24px;
   font-size: 14px;
+  white-space: nowrap;
 }
 
-.a-info {
+.accomplishments-info {
   width: 100%;
   height: 100%;
   padding: 0 0 0 40px;
-  border-left: 1px solid #A8BFD2;
 }
 
-.a-info #first {
+.selected-projects-info {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 0 18px;
+}
+
+.accomplishments-info:before {
+  display: block;
+  position: absolute;
+  content: '';
+  background: #A8BFD2;
+  height: 120px;
+  width: 1px;
+  margin-left: -41px;
+}
+
+.selected-projects-info:before {
+  display: block;
+  position: absolute;
+  content: '';
+  background: #A8BFD2;
+  height: 120px;
+  width: 1px;
+  margin-left: -19px;
+}
+
+#add-first {
   margin: 20px 0 0 0;
 }
 
-.a-title {
+#first {
+  margin: 20px 0 0 8px;
+}
+
+#second {
+  margin: 16px 0 0 4px;
+}
+
+#third {
+  margin: 16px 0 0 1px;
+}
+
+
+.add-title-1 {
+  font-family: Roboto;
+  font-weight: 400;
+  margin: 16px 0 0 0;
+  font-size: 32px;
+}
+
+.add-title-1 span {
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.add-title-2 {
   font-family: Roboto;
   font-weight: 400;
   margin: 16px 0 0 0;
@@ -125,6 +174,14 @@ span {
 .a-sub {
   font-family: Roboto;
   font-weight: 300;
-  margin: 4px 0 0 0;
+  margin: 0 0 0 0;
   font-size: 14px;
+}
+
+#selected-projects .a-sub{
+  margin-left: 22px;
+}
+
+#selected-projects {
+  margin-top: 96px;
 }
