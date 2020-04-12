@@ -269,8 +269,9 @@ span {
 }
 
 .scroll {
-    overflow: scroll;
-    height: 768px;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 768px;
 }
 
 .isuna {
@@ -306,7 +307,7 @@ span {
   position: absolute;
   right: 0px;
   top: 0px;
-cursor: pointer;
+  cursor: pointer;
 }
 
 .project-title h1 {
@@ -364,11 +365,11 @@ cursor: pointer;
 
 .project-content-container h2 {
   font-size: 24px;
-  margin: 32px 0 0 0;
+  margin: 48px 0 0 0;
   font-weight: 400;
 }
 
-.project-content-container  p {
+.project-content-container p {
   font-size: 16px;
   margin: 8px 0 0 0;
   line-height: 26px;
@@ -384,9 +385,14 @@ ul {
 
 ul {
   list-style: none;
+  background-color: #F4FAFF;
+  padding-top: 8px;
+  padding-bottom: 16px;
+  padding-right: 24px;
+  border-radius: 8px;
 }
 
-ul li{
+ul li {
   margin-top: 8px;
 }
 
@@ -398,10 +404,34 @@ ul li::before {
   margin-left: -1em;
 }
 
-.project-isuna ul li:before{
+.project-isuna ul li:before {
   color: #F9467C;
 }
 
-.project-isuna span{
+.project-isuna span {
   color: #F9467C;
+}
+
+#isuna-map {
+  width: 55%;
+  display: block;
+  margin: 40px auto 0 auto;
+}
+
+#isuna-architecture {
+  width: 60%;
+  display: block;
+  margin: 40px auto 0 auto;
+}
+
+#isuna-branding {
+  width: 50%;
+  display: block;
+  margin: 40px auto 0 auto;
+}
+
+#isuna-screens {
+  width: 80%;
+  display: block;
+  margin: 40px auto 0 auto;
 }
