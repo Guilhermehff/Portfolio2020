@@ -272,14 +272,7 @@ span {
   position: fixed;
   background-color: white;
   z-index: 1;
-}
-
-.inactive {
-  display: none;
-}
-
-.active {
-  display: block;
+  margin-top: 100%;
 }
 
 .scroll {
