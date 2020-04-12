@@ -264,6 +264,7 @@ span {
 
 .project {
   width: 85%;
+  max-width: 1480px;
   height: 768px;
   left: 0;
   right: 0;
@@ -272,7 +273,9 @@ span {
   position: fixed;
   background-color: white;
   z-index: 1;
-  margin-top: 100%;
+  margin-top: 30%;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .scroll {
@@ -330,8 +333,8 @@ span {
   width: 24px;
   padding: 16px 16px 16px 16px;
   position: absolute;
-  right: 8px;
-  top: 8px;
+  right: -64px;
+  top: 0px;
   cursor: pointer;
   background-color: white;
 }
@@ -464,4 +467,9 @@ ul li::before {
   width: 80%;
   display: block;
   margin: 40px auto 0 auto;
+}
+
+.project-isuna .exit:hover{
+  background-color: #F9467C;
+  stroke: white;
 }
