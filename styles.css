@@ -298,7 +298,7 @@ span {
   width: 0px;
   margin-left: -4px;
   margin-top: -10px;
-  transition: width 0.5s;
+  transition: width 0.3s;
   transition-timing-function: ease-out;
 }
 
