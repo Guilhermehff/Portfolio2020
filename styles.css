@@ -52,6 +52,20 @@ ul {
   background: #A7BFD3;
 }
 
+.rotate-1 {
+		-webkit-animation: rotation 40s infinite linear;
+}
+
+.rotate-2 {
+		-webkit-animation: rotation 50s infinite linear;
+}
+
+@-webkit-keyframes rotation {
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
 .container-horizontal {
   height: 100vh;
   max-width: 1366px;
@@ -278,6 +292,24 @@ span {
   cursor: pointer;
 }
 
+.isuna:before {
+  display: block;
+  position: absolute;
+  content: '';
+  background: white;
+  z-index: -1;
+  height: 80px;
+  width: 0px;
+  margin-left: -4px;
+  margin-top: -10px;
+  transition: width 0.5s;
+  transition-timing-function: ease-out;
+}
+
+.isuna:hover:before {
+  width: 400px;
+}
+
 .project-header-container {
   width: 968px;
   margin: 0 auto;
@@ -303,11 +335,12 @@ span {
 
 .exit {
   width: 24px;
-  padding: 24px 24px 24px 24px;
+  padding: 16px 16px 16px 16px;
   position: absolute;
-  right: 0px;
-  top: 0px;
+  right: 8px;
+  top: 8px;
   cursor: pointer;
+  background-color: white;
 }
 
 .project-title h1 {
@@ -374,6 +407,10 @@ span {
   margin: 8px 0 0 0;
   line-height: 26px;
   font-weight: 300;
+}
+
+.project-content-container:last-child {
+    padding-bottom: 64px;
 }
 
 ul {
