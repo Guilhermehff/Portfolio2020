@@ -53,11 +53,11 @@ ul {
 }
 
 .rotate-1 {
-		-webkit-animation: rotation 40s infinite linear;
+  -webkit-animation: rotation 40s infinite linear;
 }
 
 .rotate-2 {
-		-webkit-animation: rotation 50s infinite linear;
+  -webkit-animation: rotation 50s infinite linear;
 }
 
 @-webkit-keyframes rotation {
@@ -406,7 +406,7 @@ span {
 }
 
 .project-content-container:last-child {
-    padding-bottom: 64px;
+  padding-bottom: 64px;
 }
 
 ul {
@@ -469,7 +469,40 @@ ul li::before {
   margin: 40px auto 0 auto;
 }
 
-.project-isuna .exit:hover{
+.project-isuna .exit:hover {
   background-color: #F9467C;
   stroke: white;
+}
+
+.mobile-warning {
+  background-color: #F4FAFF;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 9999;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.mobile-warning h1 {
+  margin: 0;-
+}
+
+.mobile-warning p {
+  text-align: center;
+  padding: 0 24px 0 24px;
+}
+
+@media only screen and (max-width: 1140px) {
+.mobile-warning {
+    display: flex;
+  }
+
 }
