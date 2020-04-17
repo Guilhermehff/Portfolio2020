@@ -1,4 +1,6 @@
 $(document).ready(function() {
+
+
   $(".isuna").click(function(e) {
 
     $(".overlay").css("pointer-events", "all");
@@ -36,7 +38,6 @@ $(document).ready(function() {
   });
 
 
-
   $(".exit-project").click(function(e) {
 
     $(this).parent().css("pointer-events", "none");
@@ -53,6 +54,25 @@ $(document).ready(function() {
 
 
   });
+
+
+
+  $('.isuna').mouseover(function(){
+      $('.rotate-1').css('stroke','#F9467C');
+      $('.rotate-2').css('stroke','#F9467C');
+  });
+
+
+  $('.btwa').mouseover(function(){
+      $('.rotate-1').css('stroke','#F59D21');
+      $('.rotate-2').css('stroke','#F59D21');
+  });
+
+  $('.paper-1').mouseover(function(){
+      $('.rotate-1').css('stroke','#04D304');
+      $('.rotate-2').css('stroke','#04D304');
+  });
+
 
 
 

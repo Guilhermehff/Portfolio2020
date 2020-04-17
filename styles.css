@@ -53,11 +53,21 @@ ul {
 }
 
 .rotate-1 {
+  stroke-width: 2px;
+  stroke: #A8BFD2;
   -webkit-animation: rotation 40s infinite linear;
+  transition: stroke 0.5s linear;
+  -webkit-transition: stroke 0.5s linear;
+  -moz-transition: stroke 0.5s linear;
 }
 
 .rotate-2 {
+  stroke-width: 2px;
+  stroke: #A8BFD2;
   -webkit-animation: rotation 50s infinite linear;
+  transition: stroke 0.5s linear;
+  -webkit-transition: stroke 0.5s linear;
+  -moz-transition: stroke 0.5s linear;
 }
 
 @-webkit-keyframes rotation {
@@ -210,7 +220,7 @@ span {
   margin: 20px 0 0 0;
 }
 
-.first {
+.isuna .add-title-1 {
   margin: 20px 0 0 8px;
 }
 
@@ -224,7 +234,7 @@ span {
   opacity: 24%;
 }
 
-.fourth {
+.btwa .add-title-1 {
   margin: 16px 0 0 0px;
   opacity: 24%;
 }
@@ -316,7 +326,7 @@ span {
   content: '';
   background: white;
   z-index: -1;
-height: 71px;
+  height: 71px;
   width: 0px;
   margin-left: -32px;
   margin-top: -6px;
@@ -338,7 +348,7 @@ height: 71px;
   content: '';
   background: white;
   z-index: -1;
-height: 71px;
+  height: 71px;
   width: 0px;
   margin-left: -32px;
   margin-top: -6px;
@@ -561,6 +571,7 @@ ul li::before {
   background-color: #F9467C;
   stroke: white;
 }
+
 .overlay {
   background-color: #3B4C5B;
   position: fixed;
@@ -578,7 +589,6 @@ ul li::before {
   opacity: 0;
   pointer-events: none;
 }
-
 
 .mobile-warning {
   background-color: #F4FAFF;
