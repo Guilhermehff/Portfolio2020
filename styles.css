@@ -275,7 +275,7 @@ span {
 .project {
   width: 85%;
   max-width: 1480px;
-  height: 768px;
+  height: 90%;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -291,7 +291,7 @@ span {
 .scroll {
   overflow: scroll;
   overflow-x: hidden;
-  height: 768px;
+  height: 100%;
 }
 
 .book {
@@ -544,7 +544,7 @@ ul li::before {
 }
 
 #isuna-map {
-  width: 55%;
+  width: 40%;
   display: block;
   margin: 40px auto 0 auto;
 }
