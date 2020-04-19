@@ -68,7 +68,7 @@ $(document).ready(function() {
       $('.rotate-2').css('stroke','#F59D21');
   });
 
-  $('.paper-1').mouseover(function(){
+  $('.paper-arg').mouseover(function(){
       $('.rotate-1').css('stroke','#04D304');
       $('.rotate-2').css('stroke','#04D304');
   });
