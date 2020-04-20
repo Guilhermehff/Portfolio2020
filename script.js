@@ -3,34 +3,41 @@ $(document).ready(function() {
 
   $(".isuna").click(function(e) {
 
-    $(".overlay").css("pointer-events", "all");
     $(".project-isuna").css("pointer-events", "all");
-    $(".overlay").animate({
-      "opacity": "0.24"
+    $(".panel-1").animate({
+      "left": "0%"
     }, 500);
-    $(".project-isuna").animate({
-      "margin-top": "0%",
+    $(".panel-2").delay(100).animate({
+      "left": "0%"
+    }, 500);
+    $(".panel-3").delay(200).animate({
+      "left": "0%"
+    }, 500);
+    $(".panel-4").delay(300).animate({
+      "left": "0%"
+    }, 500);
+
+
+    $(".project-isuna").delay(500).animate({
       "opacity": "1"
+    }, 300);
+    $("body").delay(500).animate({
+      "background-color": "white"
+    }, 100);
+
+
+    $(".panel-1").animate({
+      "right": "100%"
     }, 500);
-
-    e.preventDefault();
-
-
-  });
-
-
-  $(".overlay").click(function(e) {
-
-    $(".project").css("pointer-events", "none");
-    $(".overlay").css("pointer-events", "none");
-    $(".project").animate({
-      "margin-top": "60%",
-      "opacity": "0"
+    $(".panel-2").animate({
+      "right": "100%"
     }, 500);
-    $(".overlay").animate({
-      "opacity": "0"
+    $(".panel-3").animate({
+      "right": "100%"
     }, 500);
-
+    $(".panel-4").animate({
+      "right": "100%"
+    }, 500);
 
     e.preventDefault();
 
@@ -57,20 +64,20 @@ $(document).ready(function() {
 
 
 
-  $('.isuna').mouseover(function(){
-      $('.rotate-1').css('stroke','#F9467C');
-      $('.rotate-2').css('stroke','#F9467C');
+  $('.isuna').mouseover(function() {
+    $('.rotate-1').css('stroke', '#F9467C');
+    $('.rotate-2').css('stroke', '#F9467C');
   });
 
 
-  $('.btwa').mouseover(function(){
-      $('.rotate-1').css('stroke','#F59D21');
-      $('.rotate-2').css('stroke','#F59D21');
+  $('.btwa').mouseover(function() {
+    $('.rotate-1').css('stroke', '#F59D21');
+    $('.rotate-2').css('stroke', '#F59D21');
   });
 
-  $('.paper-arg').mouseover(function(){
-      $('.rotate-1').css('stroke','#04D304');
-      $('.rotate-2').css('stroke','#04D304');
+  $('.paper-arg').mouseover(function() {
+    $('.rotate-1').css('stroke', '#04D304');
+    $('.rotate-2').css('stroke', '#04D304');
   });
 
 
