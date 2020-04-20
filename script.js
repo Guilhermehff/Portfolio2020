@@ -4,6 +4,7 @@ $(document).ready(function() {
   $(".isuna").click(function(e) {
 
     $(".project-isuna").css("pointer-events", "all");
+    $(".container-vertical").css("pointer-events", "none");
     $(".panel-1").animate({
       "left": "0%"
     }, 500);
@@ -20,6 +21,9 @@ $(document).ready(function() {
 
     $(".project-isuna").delay(500).animate({
       "opacity": "1"
+    }, 300);
+    $(".container-vertical").delay(500).animate({
+      "opacity": "0"
     }, 300);
     $("body").delay(500).animate({
       "background-color": "white"
@@ -47,14 +51,45 @@ $(document).ready(function() {
 
   $(".exit-project").click(function(e) {
 
-    $(this).parent().css("pointer-events", "none");
-    $(".overlay").css("pointer-events", "none");
-    $(this).parent().animate({
-      "margin-top": "60%",
-      "opacity": "0"
+    $(".project-isuna").css("pointer-events", "none");
+    $(".container-vertical").css("pointer-events", "all");
+
+    $(".panel-1").animate({
+      "right": "0%"
     }, 500);
-    $(".overlay").animate({
+    $(".panel-2").delay(100).animate({
+      "right": "0%"
+    }, 500);
+    $(".panel-3").delay(200).animate({
+      "right": "0%"
+    }, 500);
+    $(".panel-4").delay(300).animate({
+      "right": "0%"
+    }, 500);
+
+
+    $(".project-isuna").delay(500).animate({
       "opacity": "0"
+    }, 300);
+    $(".container-vertical").delay(500).animate({
+      "opacity": "1"
+    }, 300);
+    $("body").delay(500).animate({
+      "background-color": "#F4FAFF"
+    }, 100);
+
+
+    $(".panel-1").animate({
+      "left": "100%"
+    }, 500);
+    $(".panel-2").animate({
+      "left": "100%"
+    }, 500);
+    $(".panel-3").animate({
+      "left": "100%"
+    }, 500);
+    $(".panel-4").animate({
+      "left": "100%"
     }, 500);
 
     e.preventDefault();

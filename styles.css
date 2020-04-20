@@ -54,7 +54,7 @@ ul {
 
 .rotate-1 {
   stroke-width: 2px;
-  stroke: #A8BFD2;
+  stroke: #C1D8EB;
   -webkit-animation: rotation 40s infinite linear;
   transition: stroke 0.5s linear;
   -webkit-transition: stroke 0.5s linear;
@@ -63,7 +63,7 @@ ul {
 
 .rotate-2 {
   stroke-width: 2px;
-  stroke: #A8BFD2;
+  stroke: #C1D8EB;
   -webkit-animation: rotation 50s infinite linear;
   transition: stroke 0.5s linear;
   -webkit-transition: stroke 0.5s linear;
@@ -87,6 +87,8 @@ ul {
 .container-vertical {
   width: 100%;
   padding: 0 40px 0 40px;
+  opacity: 1;
+  transition: linear;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -404,7 +406,7 @@ span {
   width: 24px;
   padding: 16px 16px 16px 16px;
   position: absolute;
-  right: -64px;
+  left: 64px;
   top: 0px;
   cursor: pointer;
   background-color: white;
