@@ -100,19 +100,19 @@ $(document).ready(function() {
 
 
   $('.isuna').mouseover(function() {
-    $('.rotate-1').css('stroke', '#F9467C');
-    $('.rotate-2').css('stroke', '#F9467C');
+    $('.rotate-1').css('stroke', '#FF708A');
+    $('.rotate-2').css('stroke', '#FF708A');
   });
 
 
   $('.btwa').mouseover(function() {
-    $('.rotate-1').css('stroke', '#F59D21');
-    $('.rotate-2').css('stroke', '#F59D21');
+    $('.rotate-1').css('stroke', '#FEE27F');
+    $('.rotate-2').css('stroke', '#FEE27F');
   });
 
   $('.paper-arg').mouseover(function() {
-    $('.rotate-1').css('stroke', '#04D304');
-    $('.rotate-2').css('stroke', '#04D304');
+    $('.rotate-1').css('stroke', '#8DEEA2');
+    $('.rotate-2').css('stroke', '#8DEEA2');
   });
 
 
