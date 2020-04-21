@@ -34,22 +34,19 @@ ul {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: none;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: #E6F1FA;
+  background: #F4FAFF;
+  margin-top: 72px;
+  margin-bottom: 72px;
 }
 
 .project-isuna ::-webkit-scrollbar-thumb {
-  background: #F9467C;
+  background: #A7BFD3;
   border-radius: 20px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #A7BFD3;
+  background: #F9467C;
 }
 
 .rotate-1 {
@@ -282,7 +279,7 @@ span {
 .project {
   width: 85%;
   max-width: 1480px;
-  height: 90%;
+  height: 100%;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -398,7 +395,10 @@ span {
 }
 
 .project-title {
+  display: flex;
   width: 70%;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .project-details {
@@ -407,17 +407,20 @@ span {
 
 .exit {
   width: 24px;
+  height: 24px;
   padding: 16px 16px 16px 16px;
   position: absolute;
-  left: 64px;
-  top: 0px;
+  left: 180px;
+  top: 72px;
   cursor: pointer;
   background-color: white;
+  stroke: #A7BFD3;
+  stroke-width: 2px;
 }
 
 .project-title h1 {
   font-size: 48px;
-  margin: 64px 0 0 40px;
+  margin: 0 0 0 40px;
 }
 
 .project-isuna h2 {
