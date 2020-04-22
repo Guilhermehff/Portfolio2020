@@ -39,13 +39,13 @@ ul {
   margin-bottom: 72px;
 }
 
-.project-isuna ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: #A7BFD3;
   border-radius: 20px;
 }
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
+.project-isuna::-webkit-scrollbar-thumb:hover {
   background: #F9467C;
 }
 
@@ -149,7 +149,7 @@ ul {
   font-weight: 400;
   margin: 24px 0 0 64px;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 28px;
 }
 
 span {
@@ -265,7 +265,7 @@ span {
   font-weight: 300;
   margin: 2px 0 0 0;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 22px;
 }
 
 .selected-projects .a-sub {
@@ -277,8 +277,8 @@ span {
 }
 
 .project {
-  width: 85%;
-  max-width: 1480px;
+  width: 100%;
+  max-width: 1366px;
   height: 100%;
   left: 0;
   right: 0;
@@ -289,12 +289,8 @@ span {
   z-index: 1;
   opacity: 0;
   pointer-events: none;
-}
-
-.scroll {
   overflow: scroll;
   overflow-x: hidden;
-  height: 100%;
 }
 
 .add-title-1:before {
@@ -379,38 +375,89 @@ span {
   right: 0;
 }
 
-.project-header-container {
-  width: 968px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-  margin-top: 72px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid;
-  margin-bottom: 56px;
-}
-
-.project-isuna .project-header-container {
-  border-color: #F9467C;
-}
-
-.project-title {
-  display: flex;
-  width: 70%;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .project-details {
-  width: 30%;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  right: 0;
+  top: 72px;
+  height: 0px;
+  float: right;
+}
+
+.general-details {
+  background-color: #F4FAFF;
+  width: 220px;
+  padding: 24px;
+  border-radius: 8px;
+  height: fit-content;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+
+.general-details p {
+  margin: 8px 0 0 0;
+}
+
+.team-details {
+  margin-top: 16px;
+  border-radius: 8px;
+  width: 220px;
+  padding: 24px;
+  height: fit-content;
+  background-color: #F4FAFF;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+
+.team-member {
+  display: flex;
+  margin-top: 8px;
+}
+
+.team-member:first-child {
+  margin-top: 16px;
+}
+
+.team-member img {
+  width: 32px;
+  border-radius: 200px;
+}
+
+.team-member p {
+  margin: 4px 0 4px 8px;
+}
+
+.project-details h3 {
+  font-size: 14px;
+  font-weight: 900;
+  margin: 24px 0 0 0;
+}
+
+.project-details h3:first-child {
+  margin: 0 0 0 0;
+}
+
+.project-details p {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
 }
 
 .exit {
   width: 24px;
   height: 24px;
   padding: 16px 16px 16px 16px;
-  position: absolute;
-  left: 180px;
+  position: sticky;
+  left: 90px;
   top: 72px;
   cursor: pointer;
   background-color: white;
@@ -418,44 +465,8 @@ span {
   stroke-width: 2px;
 }
 
-.project-title h1 {
-  font-size: 48px;
-  margin: 0 0 0 40px;
-}
-
 .project-isuna h2 {
   color: #F9467C;
-}
-
-.project-title h2 {
-  font-size: 24px;
-  margin: 32px 0 0 40px;
-  font-weight: 400;
-}
-
-.project-title p {
-  font-size: 16px;
-  margin: 8px 0 0 40px;
-  font-weight: 300;
-  width: 63%;
-  line-height: 26px;
-}
-
-.project-details {
-  height: 360px;
-  border-left: 1px solid;
-}
-
-.project-details h3 {
-  font-size: 14px;
-  font-weight: 400;
-  margin: 16px 0 0 16px;
-}
-
-.project-details p {
-  font-size: 14px;
-  font-weight: 300;
-  margin: 4px 0 4px 16px;
 }
 
 .project-isuna .project-details h3 {
@@ -471,6 +482,12 @@ span {
   margin: 0 auto;
 }
 
+.project-content-container h1 {
+  font-size: 48px;
+  margin: 48px 0 0 0;
+  font-weight: 900;
+}
+
 .project-content-container h2 {
   font-size: 24px;
   margin: 48px 0 0 0;
@@ -479,8 +496,8 @@ span {
 
 .project-content-container p {
   font-size: 16px;
-  margin: 8px 0 0 0;
-  line-height: 26px;
+  margin: 12px 0 0 0;
+  line-height: 28px;
   font-weight: 300;
 }
 
@@ -491,7 +508,7 @@ span {
 ul {
   font-size: 16px;
   margin: 16px 0 0 0;
-  line-height: 26px;
+  line-height: 28px;
   font-weight: 300;
 }
 
