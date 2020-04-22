@@ -5,6 +5,7 @@ $(document).ready(function() {
 
     $(".project-isuna").css("pointer-events", "all");
     $(".container-vertical").css("pointer-events", "none");
+    $(".scroll").css("overflow", "scroll");
     $(".panel-1").animate({
       "left": "0%"
     }, 500);
@@ -53,6 +54,7 @@ $(document).ready(function() {
 
     $(".project-isuna").css("pointer-events", "none");
     $(".container-vertical").css("pointer-events", "all");
+        $(".scroll").css("overflow", "hidden");
 
     $(".panel-1").animate({
       "right": "0%"

@@ -35,8 +35,6 @@ ul {
 /* Track */
 ::-webkit-scrollbar-track {
   background: #F4FAFF;
-  margin-top: 72px;
-  margin-bottom: 72px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -276,21 +274,27 @@ span {
   margin-top: 96px;
 }
 
+.scroll {
+  overflow: hidden;
+  overflow-x: hidden;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 .project {
   width: 100%;
   max-width: 1366px;
-  height: 100%;
+  height: fit-content;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  position: fixed;
+  position: absolute;
   background-color: white;
   z-index: 1;
   opacity: 0;
   pointer-events: none;
-  overflow: scroll;
-  overflow-x: hidden;
 }
 
 .add-title-1:before {
@@ -379,7 +383,8 @@ span {
   display: flex;
   flex-direction: column;
   position: sticky;
-  right: 0;
+  margin-right: 8px;
+  z-index: -999;
   top: 72px;
   height: 0px;
   float: right;
