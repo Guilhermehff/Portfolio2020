@@ -474,7 +474,8 @@ span {
 .summary {
   list-style: none;
   font-size: 16px;
-  margin: 16px 0 0 0;
+  height: 0px;
+  margin: 0 0 0 0;
   line-height: 28px;
   font-weight: 300;
   position: sticky;
@@ -488,7 +489,7 @@ span {
   height: 1px;
   background-color: #A7BFD3;
   display: inline-block;
-  width: 12px;
+  width: 24px;
   margin-right: 4px;
   margin-bottom: 5px;
   -webkit-transition: width 0.2s ease;
@@ -509,8 +510,18 @@ span {
 
 .project-isuna .summary a:hover:before {
   background-color: #F9467C;
-  width: 16px;
+  width: 32px;
 }
+
+.project-isuna .active a {
+  color: #F9467C;
+}
+
+.project-isuna .active a:before {
+  background-color: #F9467C;
+  width: 32px;
+}
+
 
 .project-isuna h2 {
   color: #F9467C;

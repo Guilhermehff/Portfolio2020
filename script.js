@@ -23,6 +23,7 @@ $(document).ready(function() {
     $(".project-isuna").css("pointer-events", "all");
     $(".container-vertical").css("pointer-events", "none");
     $(".scroll").css("overflow", "auto");
+    $(".scroll").scrollTop(0);
     $(".panel-1").animate({
       "left": "0%"
     }, 500);
@@ -37,27 +38,27 @@ $(document).ready(function() {
     }, 500);
 
 
-    $(".project-isuna").delay(500).animate({
+    $(".project-isuna").delay(700).animate({
       "opacity": "1"
-    }, 300);
-    $(".container-vertical").delay(500).animate({
+    }, 0);
+    $(".container-vertical").delay(700).animate({
       "opacity": "0"
-    }, 300);
-    $("body").delay(500).animate({
+    }, 0);
+    $("body").delay(700).animate({
       "background-color": "white"
-    }, 100);
+    }, 0);
 
 
-    $(".panel-1").animate({
+    $(".panel-1").delay(200).animate({
       "right": "100%"
     }, 500);
-    $(".panel-2").animate({
+    $(".panel-2").delay(300).animate({
       "right": "100%"
     }, 500);
-    $(".panel-3").animate({
+    $(".panel-3").delay(400).animate({
       "right": "100%"
     }, 500);
-    $(".panel-4").animate({
+    $(".panel-4").delay(500).animate({
       "right": "100%"
     }, 500);
 
@@ -87,27 +88,27 @@ $(document).ready(function() {
     }, 500);
 
 
-    $(".project-isuna").delay(500).animate({
+    $(".project-isuna").delay(700).animate({
       "opacity": "0"
-    }, 300);
-    $(".container-vertical").delay(500).animate({
+    }, 0);
+    $(".container-vertical").delay(700).animate({
       "opacity": "1"
-    }, 300);
-    $("body").delay(500).animate({
+    }, 0);
+    $("body").delay(700).animate({
       "background-color": "#F4FAFF"
-    }, 100);
+    }, 0);
 
 
-    $(".panel-1").animate({
+    $(".panel-1").delay(200).animate({
       "left": "100%"
     }, 500);
-    $(".panel-2").animate({
+    $(".panel-2").delay(300).animate({
       "left": "100%"
     }, 500);
-    $(".panel-3").animate({
+    $(".panel-3").delay(400).animate({
       "left": "100%"
     }, 500);
-    $(".panel-4").animate({
+    $(".panel-4").delay(500).animate({
       "left": "100%"
     }, 500);
 
@@ -116,6 +117,59 @@ $(document).ready(function() {
 
   });
 
+
+  var lastId,
+    topMenu = $(".summary"),
+    // All list items
+    menuItems = topMenu.find("a"),
+
+    // Anchors corresponding to menu items
+    scrollItems = menuItems.map(function() {
+      var item = $($(this).attr("href"));
+      if (item.length) {
+        return item;
+      }
+    });
+
+
+  // Bind click handler to menu items
+  // so we can get a fancy scroll animation
+  menuItems.click(function(e) {
+
+    var href = $(this).attr("href"),
+      offsetTop = href === "#" ? 0 : $(href).position().top;
+
+    $('.scroll').stop().animate({
+      scrollTop: offsetTop
+    }, 850);
+
+    e.preventDefault();
+
+  });
+
+
+  // Bind to scroll
+$(".scroll").scroll(function(){
+   // Get container scroll position
+   var fromTop = $(this).scrollTop();
+
+   // Get id of current scroll item
+   var cur = scrollItems.map(function(){
+     if ($(this).position().top - ($(window).height()/2) < fromTop)
+       return this;
+   });
+   // Get the id of the current element
+   cur = cur[cur.length-1];
+   var id = cur && cur.length ? cur[0].id : "";
+
+   if (lastId !== id) {
+       lastId = id;
+       // Set/remove active class
+       menuItems
+         .parent().removeClass("active")
+         .end().filter("[href='#"+id+"']").parent().addClass("active");
+   }
+});
 
 
 
