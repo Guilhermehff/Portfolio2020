@@ -384,7 +384,6 @@ span {
   flex-direction: column;
   position: sticky;
   margin-right: 8px;
-  z-index: -999;
   top: 72px;
   height: 0px;
   float: right;
@@ -424,6 +423,7 @@ span {
 }
 
 .team-member {
+  position: relative;
   display: flex;
   margin-top: 8px;
 }
@@ -439,6 +439,64 @@ span {
 
 .team-member p {
   margin: 4px 0 4px 8px;
+}
+
+.team-member-details {
+  position: absolute;
+  z-index: 9999;
+  top: 48px;
+  left: -40px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0px 4px 12px rgba(167, 191, 211, 0.24);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.team-member-details:before {
+  content: '';
+  background-color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  transform: rotate(45deg);
+  position: absolute;
+  top: -8px;
+  left: 38px;
+  z-index: -1;
+}
+
+.team-member-details:after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  top: -54px;
+  left: 0px;
+  right: 0px;
+  margin: 0 auto;
+  z-index: -1;
+}
+
+.team-member-details p {
+  width: 208px;
+  margin: 0;
+}
+
+.team-member:hover .team-member-details {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.team-member-details:hover {
+  opacity: 1;
+  pointer-events: all;
+}
+.team-member-icon{
+  display: block;
+  margin-top: 16px;
 }
 
 .project-details h3 {
@@ -483,7 +541,6 @@ span {
   padding: 0;
 }
 
-
 .summary a::before {
   content: "";
   height: 1px;
@@ -496,12 +553,12 @@ span {
   -moz-transition: width 0.2s ease;
   -ms-transition: width 0.2s ease;
   -o-transition: width 0.2s ease;
-  transition:  width 0.2s ease;
+  transition: width 0.2s ease;
 }
 
 .summary a {
   text-decoration: none;
-    color: #A7BFD3;
+  color: #A7BFD3;
 }
 
 .project-isuna .summary a:hover {
@@ -521,7 +578,6 @@ span {
   background-color: #F9467C;
   width: 32px;
 }
-
 
 .project-isuna h2 {
   color: #F9467C;
@@ -563,7 +619,7 @@ span {
   padding-bottom: 64px;
 }
 
-.project-content-container  ul {
+.project-content-container ul {
   list-style: none;
   background-color: #F4FAFF;
   padding-top: 8px;
@@ -576,11 +632,11 @@ span {
   font-weight: 300;
 }
 
-.project-content-container  ul li {
+.project-content-container ul li {
   margin-top: 8px;
 }
 
-.project-content-container  ul li::before {
+.project-content-container ul li::before {
   content: "\2022";
   font-weight: bold;
   display: inline-block;
@@ -600,24 +656,32 @@ span {
   width: 40%;
   display: block;
   margin: 40px auto 0 auto;
+  position: relative;
+  z-index: 9999;
 }
 
 #isuna-architecture {
   width: 60%;
   display: block;
   margin: 40px auto 0 auto;
+  position: relative;
+  z-index: 9999;
 }
 
 #isuna-branding {
   width: 50%;
   display: block;
   margin: 40px auto 0 auto;
+  position: relative;
+  z-index: 9999;
 }
 
 #isuna-screens {
   width: 80%;
   display: block;
   margin: 40px auto 0 auto;
+  position: relative;
+  z-index: 9999;
 }
 
 .project-isuna .exit:hover {
