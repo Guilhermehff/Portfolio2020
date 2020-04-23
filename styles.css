@@ -29,7 +29,7 @@ ul {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 8px;
 }
 
 /* Track */
@@ -43,8 +43,8 @@ ul {
 }
 
 /* Handle on hover */
-.project-isuna::-webkit-scrollbar-thumb:hover {
-  background: #FF708A;
+.scroll::-webkit-scrollbar-thumb:hover {
+  background: #444E56;
 }
 
 .rotate-1 {
@@ -546,7 +546,7 @@ span {
   height: 1px;
   background-color: #A7BFD3;
   display: inline-block;
-  width: 24px;
+  width: 16px;
   margin-right: 4px;
   margin-bottom: 5px;
   -webkit-transition: width 0.2s ease;
