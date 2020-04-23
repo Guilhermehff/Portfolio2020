@@ -349,35 +349,35 @@ span {
 }
 
 .paper-arg {
-  cursor: pointer;
+  /* cursor: pointer; */
   padding: 8px 0 8px 0;
   margin: 8px 0 0 0;
   position: relative;
 }
 
-.paper-arg:hover .add-title-2:before {
+/* .paper-arg:hover .add-title-2:before {
   right: 0;
-}
+} */
 
 .paper-usa {
-  cursor: pointer;
+  /* cursor: pointer; */
   position: relative;
   padding: 8px 0 8px 0;
 }
 
-.paper-usa:hover .add-title-2:before {
+/* .paper-usa:hover .add-title-2:before {
   right: 0;
-}
+} */
 
 .book {
-  cursor: pointer;
+  /* cursor: pointer; */
   position: relative;
   padding: 8px 0 8px 0;
 }
 
-.book:hover .add-title-2:before {
+/* .book:hover .add-title-2:before {
   right: 0;
-}
+} */
 
 .project-details {
   display: flex;
@@ -496,6 +496,7 @@ span {
 }
 .team-member-icon{
   display: block;
+  float: left;
   margin-top: 16px;
 }
 
