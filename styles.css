@@ -29,35 +29,40 @@ ul {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 8px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: none;
+  background: #F4FAFF;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #E6F1FA;
-}
-
-.project-isuna ::-webkit-scrollbar-thumb {
-  background: #F9467C;
+  background: #A7BFD3;
   border-radius: 20px;
 }
 
 /* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #A7BFD3;
+.scroll::-webkit-scrollbar-thumb:hover {
+  background: #444E56;
 }
 
 .rotate-1 {
+  stroke-width: 2px;
+  stroke: #A7BFD3;
   -webkit-animation: rotation 40s infinite linear;
+  transition: stroke 0.5s linear;
+  -webkit-transition: stroke 0.5s linear;
+  -moz-transition: stroke 0.5s linear;
 }
 
 .rotate-2 {
+  stroke-width: 2px;
+  stroke: #A7BFD3;
   -webkit-animation: rotation 50s infinite linear;
+  transition: stroke 0.5s linear;
+  -webkit-transition: stroke 0.5s linear;
+  -moz-transition: stroke 0.5s linear;
 }
 
 @-webkit-keyframes rotation {
@@ -77,6 +82,8 @@ ul {
 .container-vertical {
   width: 100%;
   padding: 0 40px 0 40px;
+  opacity: 1;
+  transition: linear;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -108,6 +115,7 @@ ul {
 
 .logo {
   width: 32px;
+  fill: #A7BFD3;
 }
 
 .extras {
@@ -118,12 +126,13 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  border-bottom: 1px solid #A8BFD2;
+  border-bottom: 1px solid #A7BFD3;
 }
 
 .extras p {
   margin: 0;
   line-height: 1;
+  color: #A7BFD3;
 }
 
 .heading-1 {
@@ -138,6 +147,7 @@ ul {
   font-weight: 400;
   margin: 24px 0 0 64px;
   font-size: 18px;
+  line-height: 28px;
 }
 
 span {
@@ -172,6 +182,7 @@ span {
   width: 24px;
   font-size: 14px;
   white-space: nowrap;
+  color: #A7BFD3;
 }
 
 .accomplishments-info {
@@ -190,7 +201,7 @@ span {
   display: block;
   position: absolute;
   content: '';
-  background: #A8BFD2;
+  background: #A7BFD3;
   height: 120px;
   width: 1px;
   margin-left: -41px;
@@ -200,7 +211,7 @@ span {
   display: block;
   position: absolute;
   content: '';
-  background: #A8BFD2;
+  background: #A7BFD3;
   height: 120px;
   width: 1px;
   margin-left: -19px;
@@ -210,8 +221,8 @@ span {
   margin: 20px 0 0 0;
 }
 
-.first {
-  margin: 20px 0 0 8px;
+.isuna .add-title-1 {
+  margin: 0 0 0 8px;
 }
 
 .second {
@@ -224,8 +235,8 @@ span {
   opacity: 24%;
 }
 
-.fourth {
-  margin: 16px 0 0 0px;
+.btwa .add-title-1 {
+  margin: 0 0 0 4px;
   opacity: 24%;
 }
 
@@ -243,153 +254,353 @@ span {
 .add-title-2 {
   font-family: Roboto;
   font-weight: 400;
-  margin: 16px 0 0 0;
+  margin: 0 0 0 0;
   font-size: 18px;
 }
 
 .a-sub {
   font-family: Roboto;
   font-weight: 300;
-  margin: 0 0 0 0;
+  margin: 2px 0 0 0;
   font-size: 14px;
+  line-height: 22px;
 }
 
 .selected-projects .a-sub {
   margin-left: 22px;
 }
 
-.selected-projects {
+.accomplishments {
   margin-top: 96px;
 }
 
+.scroll {
+  overflow: hidden;
+  overflow-x: hidden;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 .project {
-  width: 85%;
-  max-width: 1480px;
-  height: 768px;
+  width: 100%;
+  max-width: 1366px;
+  height: fit-content;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  position: fixed;
+  position: absolute;
   background-color: white;
   z-index: 1;
-  margin-top: 30%;
   opacity: 0;
   pointer-events: none;
 }
 
-.scroll {
-  overflow: scroll;
-  overflow-x: hidden;
-  height: 768px;
-}
-
-.isuna {
-  cursor: pointer;
-}
-
-.isuna:before {
+.add-title-1:before {
   display: block;
   position: absolute;
   content: '';
   background: white;
   z-index: -1;
-  height: 80px;
-  width: 0px;
-  margin-left: -4px;
-  margin-top: -10px;
-  transition: width 0.3s;
+  top: 1px;
+  left: 0;
+  bottom: 1px;
+  right: 437px;
+  margin-left: -8px;
+  transition: right 0.3s;
   transition-timing-function: ease-out;
 }
 
-.isuna:hover:before {
-  width: 400px;
-}
-
-.project-header-container {
-  width: 968px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
-  margin-top: 72px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid;
-  margin-bottom: 56px;
-}
-
-.project-isuna .project-header-container {
-  border-color: #F9467C;
-}
-
-.project-title {
-  width: 70%;
-}
-
-.project-details {
-  width: 30%;
-}
-
-.exit {
-  width: 24px;
-  padding: 16px 16px 16px 16px;
-  position: absolute;
-  right: -64px;
-  top: 0px;
+.isuna {
   cursor: pointer;
-  background-color: white;
+  position: relative;
+  padding: 8px 0 8px 0;
+  margin: 8px 0 0 0;
 }
 
-.project-title h1 {
-  font-size: 48px;
-  margin: 64px 0 0 40px;
+.isuna:hover .add-title-1:before {
+  right: 0;
 }
 
-.project-isuna h2 {
-  color: #F9467C;
+.btwa {
+  cursor: pointer;
+  position: relative;
+  padding: 8px 0 8px 0;
 }
 
-.project-title h2 {
-  font-size: 24px;
-  margin: 32px 0 0 40px;
-  font-weight: 400;
+.btwa:hover .add-title-1:before {
+  right: 0;
 }
 
-.project-title p {
-  font-size: 16px;
-  margin: 8px 0 0 40px;
-  font-weight: 300;
-  width: 63%;
-  line-height: 26px;
+.add-title-2:before {
+  display: block;
+  position: absolute;
+  content: '';
+  background: white;
+  z-index: -1;
+  top: 1px;
+  left: 0;
+  bottom: 1px;
+  right: 437px;
+  margin-left: -32px;
+  transition: right 0.3s;
+  transition-timing-function: ease-out;
 }
+
+.paper-arg {
+  /* cursor: pointer; */
+  padding: 8px 0 8px 0;
+  margin: 8px 0 0 0;
+  position: relative;
+}
+
+/* .paper-arg:hover .add-title-2:before {
+  right: 0;
+} */
+
+.paper-usa {
+  /* cursor: pointer; */
+  position: relative;
+  padding: 8px 0 8px 0;
+}
+
+/* .paper-usa:hover .add-title-2:before {
+  right: 0;
+} */
+
+.book {
+  /* cursor: pointer; */
+  position: relative;
+  padding: 8px 0 8px 0;
+}
+
+/* .book:hover .add-title-2:before {
+  right: 0;
+} */
 
 .project-details {
-  height: 360px;
-  border-left: 1px solid;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  margin-right: 8px;
+  top: 72px;
+  height: 0px;
+  float: right;
+}
+
+.general-details {
+  background-color: #F4FAFF;
+  width: 220px;
+  padding: 24px;
+  border-radius: 8px;
+  height: fit-content;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+
+.general-details p {
+  margin: 8px 0 0 0;
+}
+
+.team-details {
+  margin-top: 16px;
+  border-radius: 8px;
+  width: 220px;
+  padding: 24px;
+  height: fit-content;
+  background-color: #F4FAFF;
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */
+}
+
+.team-member {
+  position: relative;
+  display: flex;
+  margin-top: 8px;
+}
+
+.team-member:first-child {
+  margin-top: 16px;
+}
+
+.team-member img {
+  width: 32px;
+  border-radius: 200px;
+}
+
+.team-member p {
+  margin: 4px 0 4px 8px;
+}
+
+.team-member-details {
+  position: absolute;
+  z-index: 9999;
+  top: 48px;
+  left: -40px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 16px;
+  box-shadow: 0px 4px 12px rgba(167, 191, 211, 0.24);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.team-member-details:before {
+  content: '';
+  background-color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  transform: rotate(45deg);
+  position: absolute;
+  top: -8px;
+  left: 38px;
+  z-index: -1;
+}
+
+.team-member-details:after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 100%;
+  top: -54px;
+  left: 0px;
+  right: 0px;
+  margin: 0 auto;
+  z-index: -1;
+}
+
+.team-member-details p {
+  width: 208px;
+  margin: 0;
+}
+
+.team-member:hover .team-member-details {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.team-member-details:hover {
+  opacity: 1;
+  pointer-events: all;
+}
+.team-member-icon{
+  display: block;
+  float: left;
+  margin-top: 16px;
 }
 
 .project-details h3 {
   font-size: 14px;
-  font-weight: 400;
-  margin: 16px 0 0 16px;
+  font-weight: 900;
+  margin: 24px 0 0 0;
+}
+
+.project-details h3:first-child {
+  margin: 0 0 0 0;
 }
 
 .project-details p {
   font-size: 14px;
   font-weight: 300;
-  margin: 4px 0 4px 16px;
+  line-height: 20px;
+}
+
+.exit {
+  width: 24px;
+  height: 24px;
+  padding: 16px 16px 16px 16px;
+  position: sticky;
+  left: 90px;
+  top: 72px;
+  cursor: pointer;
+  border-radius: 8px;
+  background-color: #F4FAFF;
+  stroke: #A7BFD3;
+  stroke-width: 2px;
+}
+
+.summary {
+  list-style: none;
+  font-size: 16px;
+  height: 0px;
+  margin: 0 0 0 0;
+  line-height: 28px;
+  font-weight: 300;
+  position: sticky;
+  top: 400px;
+  padding: 0;
+}
+
+.summary a::before {
+  content: "";
+  height: 1px;
+  background-color: #A7BFD3;
+  display: inline-block;
+  width: 16px;
+  margin-right: 4px;
+  margin-bottom: 5px;
+  -webkit-transition: width 0.2s ease;
+  -moz-transition: width 0.2s ease;
+  -ms-transition: width 0.2s ease;
+  -o-transition: width 0.2s ease;
+  transition: width 0.2s ease;
+}
+
+.summary a {
+  text-decoration: none;
+  color: #A7BFD3;
+}
+
+.project-isuna .summary a:hover {
+  color: #FF708A;
+}
+
+.project-isuna .summary a:hover:before {
+  background-color: #FF708A;
+  width: 32px;
+}
+
+.project-isuna .active a {
+  color: #FF708A;
+}
+
+.project-isuna .active a:before {
+  background-color: #FF708A;
+  width: 32px;
+}
+
+.project-isuna h2 {
+  color: #FF708A;
 }
 
 .project-isuna .project-details h3 {
-  color: #F9467C;
+  color: #FF708A;
 }
 
 .project-isuna .project-details {
-  border-color: #F9467C;
+  border-color: #FF708A;
 }
 
 .project-content-container {
   width: 50%;
   margin: 0 auto;
+}
+
+.project-content-container h1 {
+  font-size: 48px;
+  margin: 48px 0 0 0;
+  font-weight: 900;
 }
 
 .project-content-container h2 {
@@ -400,8 +611,8 @@ span {
 
 .project-content-container p {
   font-size: 16px;
-  margin: 8px 0 0 0;
-  line-height: 26px;
+  margin: 12px 0 0 0;
+  line-height: 28px;
   font-weight: 300;
 }
 
@@ -409,27 +620,24 @@ span {
   padding-bottom: 64px;
 }
 
-ul {
-  font-size: 16px;
-  margin: 16px 0 0 0;
-  line-height: 26px;
-  font-weight: 300;
-}
-
-ul {
+.project-content-container ul {
   list-style: none;
   background-color: #F4FAFF;
   padding-top: 8px;
   padding-bottom: 16px;
   padding-right: 24px;
   border-radius: 8px;
+  font-size: 16px;
+  margin: 16px 0 0 0;
+  line-height: 28px;
+  font-weight: 300;
 }
 
-ul li {
+.project-content-container ul li {
   margin-top: 8px;
 }
 
-ul li::before {
+.project-content-container ul li::before {
   content: "\2022";
   font-weight: bold;
   display: inline-block;
@@ -438,40 +646,104 @@ ul li::before {
 }
 
 .project-isuna ul li:before {
-  color: #F9467C;
+  color: #FF708A;
 }
 
 .project-isuna span {
-  color: #F9467C;
+  color: #FF708A;
 }
 
 #isuna-map {
-  width: 55%;
+  width: 40%;
   display: block;
   margin: 40px auto 0 auto;
+  position: relative;
+  z-index: 9999;
 }
 
 #isuna-architecture {
   width: 60%;
   display: block;
   margin: 40px auto 0 auto;
+  position: relative;
+  z-index: 9999;
 }
 
 #isuna-branding {
   width: 50%;
   display: block;
   margin: 40px auto 0 auto;
+  position: relative;
+  z-index: 9999;
 }
 
 #isuna-screens {
   width: 80%;
   display: block;
   margin: 40px auto 0 auto;
+  position: relative;
+  z-index: 9999;
 }
 
 .project-isuna .exit:hover {
-  background-color: #F9467C;
+  background-color: #FF708A;
   stroke: white;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 2;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.panel-1 {
+  background-color: #FF708A;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 100%;
+  right: 0;
+  height: 25%;
+  transition: linear;
+}
+
+.panel-2 {
+  background-color: #FF708A;
+  position: absolute;
+  top: 25%;
+  bottom: 0;
+  left: 100%;
+  right: 0;
+  height: 25%;
+  transition: linear;
+}
+
+.panel-3 {
+  background-color: #FF708A;
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  left: 100%;
+  right: 0;
+  height: 25%;
+  transition: linear;
+}
+
+.panel-4 {
+  background-color: #FF708A;
+  position: absolute;
+  top: 75%;
+  bottom: 0;
+  left: 100%;
+  right: 0;
+  height: 25%;
+  transition: linear;
 }
 
 .mobile-warning {
@@ -493,19 +765,18 @@ ul li::before {
 
 .mobile-warning h1 {
   margin: 0;
-  font-size:10vw;
+  font-size: 10vw;
 }
 
 .mobile-warning p {
   text-align: center;
   padding: 0 24px 0 24px;
-  font-size:6vw;
+  font-size: 6vw;
   line-height: 10vw;
 }
 
 @media only screen and (max-width: 1140px) {
-.mobile-warning {
+  .mobile-warning {
     display: flex;
   }
-
 }
