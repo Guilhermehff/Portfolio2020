@@ -44,7 +44,7 @@ ul {
 
 /* Handle on hover */
 .project-isuna::-webkit-scrollbar-thumb:hover {
-  background: #F9467C;
+  background: #FF708A;
 }
 
 .rotate-1 {
@@ -562,33 +562,33 @@ span {
 }
 
 .project-isuna .summary a:hover {
-  color: #F9467C;
+  color: #FF708A;
 }
 
 .project-isuna .summary a:hover:before {
-  background-color: #F9467C;
+  background-color: #FF708A;
   width: 32px;
 }
 
 .project-isuna .active a {
-  color: #F9467C;
+  color: #FF708A;
 }
 
 .project-isuna .active a:before {
-  background-color: #F9467C;
+  background-color: #FF708A;
   width: 32px;
 }
 
 .project-isuna h2 {
-  color: #F9467C;
+  color: #FF708A;
 }
 
 .project-isuna .project-details h3 {
-  color: #F9467C;
+  color: #FF708A;
 }
 
 .project-isuna .project-details {
-  border-color: #F9467C;
+  border-color: #FF708A;
 }
 
 .project-content-container {
@@ -645,11 +645,11 @@ span {
 }
 
 .project-isuna ul li:before {
-  color: #F9467C;
+  color: #FF708A;
 }
 
 .project-isuna span {
-  color: #F9467C;
+  color: #FF708A;
 }
 
 #isuna-map {
@@ -685,7 +685,7 @@ span {
 }
 
 .project-isuna .exit:hover {
-  background-color: #F9467C;
+  background-color: #FF708A;
   stroke: white;
 }
 
