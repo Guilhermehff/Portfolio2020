@@ -85,7 +85,7 @@ $(document).ready(function() {
   });
 
 
-  $(".exit-project").click(function(e) {
+  $(".exit").click(function(e) {
 
     $(".project-isuna").css("pointer-events", "none");
     $(".container-vertical").css("pointer-events", "all");
