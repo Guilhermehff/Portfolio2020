@@ -23,6 +23,17 @@ $(document).ready(function() {
     }
   );
 
+  $(".hubster").hover(
+    function() {
+      $('.rotate-1').css('stroke', '#FE844C');
+      $('.rotate-2').css('stroke', '#FE844C');
+    },
+    function() {
+      $('.rotate-1').css('stroke', '#A7BFD3');
+      $('.rotate-2').css('stroke', '#A7BFD3');
+    }
+  );
+
   $(".paper-arg").hover(
     function() {
       $('.rotate-1').css('stroke', '#8DEEA2');
@@ -83,6 +94,22 @@ $(document).ready(function() {
 
 
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   $(".exit").click(function(e) {

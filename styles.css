@@ -225,19 +225,16 @@ span {
   margin: 0 0 0 8px;
 }
 
-.second {
-  margin: 16px 0 0 4px;
-  opacity: 24%;
+.hubster .add-title-1 {
+  margin: 0px 0 0 4px;
 }
 
 .third {
   margin: 16px 0 0 1px;
-  opacity: 24%;
 }
 
 .btwa .add-title-1 {
   margin: 0 0 0 4px;
-  opacity: 24%;
 }
 
 .add-title-1 {
@@ -312,24 +309,14 @@ span {
   transition-timing-function: ease-out;
 }
 
-.isuna {
+.selected-projects-info div {
   cursor: pointer;
   position: relative;
   padding: 8px 0 8px 0;
   margin: 8px 0 0 0;
 }
 
-.isuna:hover .add-title-1:before {
-  right: 0;
-}
-
-.btwa {
-  cursor: pointer;
-  position: relative;
-  padding: 8px 0 8px 0;
-}
-
-.btwa:hover .add-title-1:before {
+.selected-projects-info div:hover .add-title-1:before {
   right: 0;
 }
 
