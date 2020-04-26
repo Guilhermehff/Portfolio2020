@@ -46,9 +46,19 @@ $(document).ready(function() {
   );
 
 
-  $(".isuna").click(function(e) {
+  $(".selected-projects-info div").click(function(e) {
 
-    $(".project-isuna").css("pointer-events", "all");
+    var project = ".project-" + $(this).attr('class');
+
+    if ($(this).attr('class') === "isuna") {
+      $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", "#FF708A");
+    } else if ($(this).attr('class') === "hubster") {
+      $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", "#FE844C");
+    }
+
+
+    $(project).css("display", "block");
+    $(project).css("pointer-events", "all");
     $(".container-vertical").css("pointer-events", "none");
     $(".scroll").css("overflow", "auto");
     $(".scroll").scrollTop(0);
@@ -66,7 +76,7 @@ $(document).ready(function() {
     }, 500);
 
 
-    $(".project-isuna").delay(700).animate({
+    $(project).delay(700).animate({
       "opacity": "1"
     }, 0);
     $(".container-vertical").delay(700).animate({
@@ -98,23 +108,11 @@ $(document).ready(function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   $(".exit").click(function(e) {
 
-    $(".project-isuna").css("pointer-events", "none");
+    var project = "." + $(this).parent().attr('class').split(' ').pop();;
+
+    $(project).css("pointer-events", "none");
     $(".container-vertical").css("pointer-events", "all");
     $(".scroll").css("overflow", "hidden");
 
@@ -132,7 +130,7 @@ $(document).ready(function() {
     }, 500);
 
 
-    $(".project-isuna").delay(700).animate({
+    $(project).delay(700).animate({
       "opacity": "0"
     }, 0);
     $(".container-vertical").delay(700).animate({
@@ -155,6 +153,12 @@ $(document).ready(function() {
     $(".panel-4").delay(500).animate({
       "left": "100%"
     }, 500);
+
+
+    setTimeout(function(){
+        $(project).css("display", "none");
+    }, 1000);  
+
 
     e.preventDefault();
 
@@ -199,7 +203,7 @@ $(document).ready(function() {
 
     // Get id of current scroll item
     var cur = scrollItems.map(function() {
-      if ($(this).position().top - $(window).height()/8 < fromTop)
+      if ($(this).position().top - $(window).height() / 8 < fromTop)
         return this;
     });
     // Get the id of the current element
@@ -215,12 +219,12 @@ $(document).ready(function() {
         .end().filter("[href='#" + id + "']").parent().addClass("active");
     }
 
-      if ( $(".scroll").scrollTop() + $(".scroll").innerHeight() >= $(".project")[0].scrollHeight ) {
-        menuItems
-          .parent().removeClass("active")
-        $(".summary li:last-child").addClass("active");
-        lastId = "end";
-      }
+    if ($(".scroll").scrollTop() + $(".scroll").innerHeight() >= $(".project")[0].scrollHeight) {
+      menuItems
+        .parent().removeClass("active")
+      $(".summary li:last-child").addClass("active");
+      lastId = "end";
+    }
 
 
 

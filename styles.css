@@ -549,36 +549,6 @@ span {
   color: #A7BFD3;
 }
 
-.project-isuna .summary a:hover {
-  color: #FF708A;
-}
-
-.project-isuna .summary a:hover:before {
-  background-color: #FF708A;
-  width: 32px;
-}
-
-.project-isuna .active a {
-  color: #FF708A;
-}
-
-.project-isuna .active a:before {
-  background-color: #FF708A;
-  width: 32px;
-}
-
-.project-isuna h2 {
-  color: #FF708A;
-}
-
-.project-isuna .project-details h3 {
-  color: #FF708A;
-}
-
-.project-isuna .project-details {
-  border-color: #FF708A;
-}
-
 .project-content-container {
   width: 50%;
   margin: 0 auto;
@@ -632,14 +602,6 @@ span {
   margin-left: -1em;
 }
 
-.project-isuna ul li:before {
-  color: #FF708A;
-}
-
-.project-isuna span {
-  color: #FF708A;
-}
-
 #isuna-map {
   width: 40%;
   display: block;
@@ -672,11 +634,6 @@ span {
   z-index: 9999;
 }
 
-.project-isuna .exit:hover {
-  background-color: #FF708A;
-  stroke: white;
-}
-
 .overlay {
   position: fixed;
   z-index: 2;
@@ -690,7 +647,7 @@ span {
 }
 
 .panel-1 {
-  background-color: #FF708A;
+  background-color: #A7BFD3;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -701,7 +658,7 @@ span {
 }
 
 .panel-2 {
-  background-color: #FF708A;
+  background-color: #A7BFD3;
   position: absolute;
   top: 25%;
   bottom: 0;
@@ -712,7 +669,7 @@ span {
 }
 
 .panel-3 {
-  background-color: #FF708A;
+  background-color: #A7BFD3;
   position: absolute;
   top: 50%;
   bottom: 0;
@@ -723,7 +680,7 @@ span {
 }
 
 .panel-4 {
-  background-color: #FF708A;
+  background-color: #A7BFD3;
   position: absolute;
   top: 75%;
   bottom: 0;
@@ -761,6 +718,111 @@ span {
   font-size: 6vw;
   line-height: 10vw;
 }
+
+.project-isuna {
+  display: none;
+}
+
+.project-hubster {
+  display: none;
+}
+
+
+/* Isuna project specific colors */
+
+.project-isuna .summary a:hover {
+  color: #FF708A;
+}
+
+.project-isuna .summary a:hover:before {
+  background-color: #FF708A;
+  width: 32px;
+}
+
+.project-isuna .active a {
+  color: #FF708A;
+}
+
+.project-isuna .active a:before {
+  background-color: #FF708A;
+  width: 32px;
+}
+
+.project-isuna h2 {
+  color: #FF708A;
+}
+
+.project-isuna .project-details h3 {
+  color: #FF708A;
+}
+
+.project-isuna .project-details {
+  border-color: #FF708A;
+}
+
+
+.project-isuna ul li:before {
+  color: #FF708A;
+}
+
+.project-isuna span {
+  color: #FF708A;
+}
+
+
+.project-isuna .exit:hover {
+  background-color: #FF708A;
+  stroke: white;
+}
+
+/* Hubster project specific colors */
+
+
+.project-hubster .summary a:hover {
+  color: #FE844C;
+}
+
+.project-hubster .summary a:hover:before {
+  background-color: #FE844C;
+  width: 32px;
+}
+
+.project-hubster .active a {
+  color: #FE844C;
+}
+
+.project-hubster .active a:before {
+  background-color: #FE844C;
+  width: 32px;
+}
+
+.project-hubster h2 {
+  color: #FE844C;
+}
+
+.project-hubster .project-details h3 {
+  color: #FE844C;
+}
+
+.project-hubster .project-details {
+  border-color: #FE844C;
+}
+
+
+.project-hubster ul li:before {
+  color: #FE844C;
+}
+
+.project-hubster span {
+  color: #FE844C;
+}
+
+
+.project-hubster .exit:hover {
+  background-color: #FE844C;
+  stroke: white;
+}
+
 
 @media only screen and (max-width: 1140px) {
   .mobile-warning {
