@@ -60,7 +60,7 @@ $(document).ready(function() {
     $(project).css("display", "block");
     $(project).css("pointer-events", "all");
     $(".container-vertical").css("pointer-events", "none");
-    $(".scroll").css("overflow", "auto");
+    $(".scroll").css("overflow", "overlay");
     $(".scroll").scrollTop(0);
     $(".panel-1").animate({
       "left": "0%"
@@ -114,7 +114,7 @@ $(document).ready(function() {
 
     $(project).css("pointer-events", "none");
     $(".container-vertical").css("pointer-events", "all");
-    $(".scroll").css("overflow", "hidden");
+    $(".scroll").css("overflow", "overlay");
 
     $(".panel-1").animate({
       "right": "0%"
@@ -157,7 +157,7 @@ $(document).ready(function() {
 
     setTimeout(function(){
         $(project).css("display", "none");
-    }, 1000);  
+    }, 1000);
 
 
     e.preventDefault();
