@@ -1,5 +1,17 @@
 $(document).ready(function() {
 
+  var lastId;
+  var project;
+  var menuItems = $(".summary").find("a");
+
+  // Anchors corresponding to menu items
+  scrollItemsIsuna = $(".project-isuna .summary").find("a").map(function() {
+    var item = $($(this).attr("href"));
+    if (item.length) {
+      return item;
+    }
+  });
+
 
   $(".isuna").hover(
     function() {
@@ -48,7 +60,7 @@ $(document).ready(function() {
 
   $(".selected-projects-info div").click(function(e) {
 
-    var project = ".project-" + $(this).attr('class');
+    project = ".project-" + $(this).attr('class');
 
     if ($(this).attr('class') === "isuna") {
       $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", "#FF708A");
@@ -155,8 +167,8 @@ $(document).ready(function() {
     }, 500);
 
 
-    setTimeout(function(){
-        $(project).css("display", "none");
+    setTimeout(function() {
+      $(project).css("display", "none");
     }, 1000);
 
 
@@ -166,18 +178,7 @@ $(document).ready(function() {
   });
 
 
-  var lastId,
-    topMenu = $(".summary"),
-    // All list items
-    menuItems = topMenu.find("a"),
 
-    // Anchors corresponding to menu items
-    scrollItems = menuItems.map(function() {
-      var item = $($(this).attr("href"));
-      if (item.length) {
-        return item;
-      }
-    });
 
 
   // Bind click handler to menu items
@@ -201,29 +202,34 @@ $(document).ready(function() {
     // Get container scroll position
     var fromTop = $(this).scrollTop();
 
-    // Get id of current scroll item
-    var cur = scrollItems.map(function() {
-      if ($(this).position().top - $(window).height() / 8 < fromTop)
-        return this;
-    });
-    // Get the id of the current element
-    cur = cur[cur.length - 1];
-    var id = cur && cur.length ? cur[0].id : "";
-    var lastId;
 
-    if (lastId !== id) {
-      lastId = id;
-      // Set/remove active class
-      menuItems
-        .parent().removeClass("active")
-        .end().filter("[href='#" + id + "']").parent().addClass("active");
-    }
+    if (project == ".project-isuna") {
 
-    if ($(".scroll").scrollTop() + $(".scroll").innerHeight() >= $(".project")[0].scrollHeight) {
-      menuItems
-        .parent().removeClass("active")
-      $(".summary li:last-child").addClass("active");
-      lastId = "end";
+      // Get id of current scroll item
+      var cur = scrollItemsIsuna.map(function() {
+        if ($(this).position().top - $(window).height() / 8 < fromTop)
+          return this;
+      });
+      // Get the id of the current element
+      cur = cur[cur.length - 1];
+      var id = cur && cur.length ? cur[0].id : "";
+      var lastId;
+
+      if (lastId !== id) {
+        lastId = id;
+        // Set/remove active class
+        menuItems
+          .parent().removeClass("active")
+          .end().filter("[href='#" + id + "']").parent().addClass("active");
+      }
+
+      if ($(".scroll").scrollTop() + $(".scroll").innerHeight() >= $(".project")[0].scrollHeight) {
+        menuItems
+          .parent().removeClass("active")
+        $(".summary li:last-child").addClass("active");
+        lastId = "end";
+      }
+
     }
 
 
