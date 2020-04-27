@@ -78,7 +78,6 @@ $(document).ready(function() {
 
 
     $(project).css("display", "block");
-    $(project).css("pointer-events", "all");
     $(".container-vertical").css("pointer-events", "none");
     $(".scroll").css("overflow", "overlay");
     $(".panel-1").animate({
@@ -119,6 +118,11 @@ $(document).ready(function() {
       "right": "100%"
     }, 500);
 
+    setTimeout(function() {
+        $(project).css("pointer-events", "all");
+    }, 1500);
+
+
     e.preventDefault();
 
 
@@ -145,7 +149,6 @@ $(document).ready(function() {
     var project = "." + $(this).parent().attr('class').split(' ').pop();
 
     $(project).css("pointer-events", "none");
-    $(".container-vertical").css("pointer-events", "all");
     $(".scroll").css("overflow", "overlay");
 
     $(".panel-1").animate({
@@ -189,7 +192,8 @@ $(document).ready(function() {
 
     setTimeout(function() {
       $(project).css("display", "none");
-    }, 700);
+      $(".container-vertical").css("pointer-events", "all");
+    }, 1500);
 
 
     e.preventDefault();
