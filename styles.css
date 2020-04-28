@@ -527,6 +527,7 @@ span {
   position: sticky;
   top: 400px;
   padding: 0;
+  float: left;
 }
 
 .summary a::before {
