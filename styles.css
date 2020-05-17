@@ -624,6 +624,34 @@ span {
   margin-left: -1em;
 }
 
+.thanks {
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 40px;
+}
+
+.thanks h1 {
+  font-size: 40px;
+  padding: 8px 0 0 0;
+}
+
+.thanks p:nth-child(2) {
+  padding: 0 0 8px 0;
+}
+
+.thanks p:nth-child(3) {
+  padding: 16px;
+  text-align: left;
+  background-color: #F4FAFF;
+  margin: 0;
+}
+
+.thanks h1, .thanks p:nth-child(2) {
+  color: white;
+  margin: 0;
+}
+
 #isuna-logo {
   height: 100%;
   display: block;
@@ -797,6 +825,10 @@ span {
 .project-isuna .exit:hover {
   background-color: #FF708A;
   stroke: white;
+}
+
+.thanks h1, .thanks p:nth-child(2) {
+  background-color: #FF708A;
 }
 
 /* Hubster project specific colors */
