@@ -70,6 +70,8 @@ $(document).ready(function() {
       $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", isunaColor);
     } else if ($(this).hasClass('hubster')) {
       $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", hubsterColor);
+    } else if ($(this).hasClass('btwa')) {
+      $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", btwaColor);
     }
 
 
@@ -140,6 +142,8 @@ $(document).ready(function() {
       $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", isunaColor);
     } else if ($(this).hasClass('hubster')) {
       $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", hubsterColor);
+    } else if ($(this).hasClass('btwa')) {
+      $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", btwaColor);
     }
 
     $(".panel-1").css({

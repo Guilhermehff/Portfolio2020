@@ -297,6 +297,9 @@ span {
 .project-header {
   width: 100%;
   height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .project-info {
@@ -649,7 +652,7 @@ span {
   padding: 16px;
   text-align: left;
   background-color: #F4FAFF;
-  margin: 0 0 24px 0;
+  margin: 0 0 40px 0;
 }
 
 .thanks h1, .thanks p:nth-child(2) {
@@ -679,35 +682,35 @@ span {
 #isuna-logo {
   height: 100%;
   display: block;
-  margin: 0 auto
 }
 
-#isuna-map {
+#isuna-logo img {
+  height: 100%;
+}
+
+.isuna-img {
   width: 100%;
   display: block;
   margin: 40px auto 0 auto;
   position: relative;
 }
 
-#isuna-architecture {
-  width: 100%;
+#hubster-logo {
+  height: 20%;
   display: block;
-  margin: 40px auto 0 auto;
-  position: relative;
 }
 
-#isuna-branding {
-  width: 100%;
-  display: block;
-  margin: 40px auto 0 auto;
-  position: relative;
+#hubster-logo img {
+  height: 100%;
 }
 
-#isuna-screens {
-  width: 100%;
+#btwa-logo {
+  height: 60%;
   display: block;
-  margin: 40px auto 0 auto;
-  position: relative;
+}
+
+#btwa-logo img {
+  height: 100%;
 }
 
 .overlay {
@@ -913,6 +916,62 @@ span {
 
 .project-hubster .other-project:hover {
   background-color: #FE844C;
+}
+
+/* btwa project specific colors */
+.project-btwa .project-header {
+  background-color: #FEE27F;
+}
+
+.project-btwa .summary a:hover {
+  color: #FEE27F;
+}
+
+.project-btwa .summary a:hover:before {
+  background-color: #FEE27F;
+  width: 32px;
+}
+
+.project-btwa .active a {
+  color: #FEE27F;
+}
+
+.project-btwa .active a:before {
+  background-color: #FEE27F;
+  width: 32px;
+}
+
+.project-btwa h2 {
+  color: #FEE27F;
+}
+
+.project-btwa .project-details h3 {
+  color: #FEE27F;
+}
+
+.project-btwa .project-details {
+  border-color: #FEE27F;
+}
+
+.project-btwa ul li:before {
+  color: #FEE27F;
+}
+
+.project-btwa span {
+  color: #FEE27F;
+}
+
+.project-btwa .exit:hover {
+  background-color: #FEE27F;
+  stroke: white;
+}
+
+.project-btwa .thanks h1, .project-btwa .thanks p:nth-child(2) {
+  background-color: #FEE27F;
+}
+
+.project-btwa .other-project:hover {
+  background-color: #FEE27F;
 }
 
 @media only screen and (max-width: 1140px) {
