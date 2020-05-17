@@ -695,6 +695,10 @@ span {
   position: relative;
 }
 
+.isuna-img img{
+  width: 100%;
+}
+
 #hubster-logo {
   height: 20%;
   display: block;
@@ -805,6 +809,11 @@ span {
 .project-hubster {
   display: none;
 }
+
+.project-btwa {
+  display: none;
+}
+
 
 /* Isuna project specific colors */
 .project-isuna .project-header {
