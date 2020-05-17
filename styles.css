@@ -664,10 +664,16 @@ span {
   border-radius: 8px;
   margin-top: 16px;
   cursor: pointer;
+  transition: 0.2s ease;
 }
 
 .other-project h2, .other-project p {
   margin: 0;
+  transition: 0.2s ease;
+}
+
+.other-project:hover h2, .other-project:hover p {
+  color: white;
 }
 
 #isuna-logo {
@@ -845,11 +851,19 @@ span {
   stroke: white;
 }
 
-.thanks h1, .thanks p:nth-child(2) {
+.project-isuna .thanks h1, .project-isuna .thanks p:nth-child(2) {
+  background-color: #FF708A;
+}
+
+.project-isuna .other-project:hover {
   background-color: #FF708A;
 }
 
 /* Hubster project specific colors */
+.project-hubster .project-header {
+  background-color: #2F373D;
+}
+
 .project-hubster .summary a:hover {
   color: #FE844C;
 }
@@ -891,6 +905,14 @@ span {
 .project-hubster .exit:hover {
   background-color: #FE844C;
   stroke: white;
+}
+
+.project-hubster .thanks h1, .project-hubster .thanks p:nth-child(2) {
+  background-color: #FE844C;
+}
+
+.project-hubster .other-project:hover {
+  background-color: #FE844C;
 }
 
 @media only screen and (max-width: 1140px) {
