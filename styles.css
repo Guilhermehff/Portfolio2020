@@ -287,17 +287,22 @@ span {
 
 .project {
   width: 100%;
+  background-color: white;
+  z-index: 1;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.project-info {
+  width: 100%;
   max-width: 1366px;
   height: fit-content;
   left: 0;
   right: 0;
   margin-left: auto;
   margin-right: auto;
-  position: absolute;
   background-color: white;
   z-index: 1;
-  opacity: 0;
-  pointer-events: none;
 }
 
 .add-title-1:before {
@@ -372,8 +377,6 @@ span {
 .project-details {
   display: flex;
   flex-direction: column;
-  position: sticky;
-  margin-right: 8px;
   top: 72px;
   height: 0px;
   float: right;
@@ -511,8 +514,7 @@ span {
   width: 24px;
   height: 24px;
   padding: 16px 16px 16px 16px;
-  position: sticky;
-  left: 90px;
+  position: fixed;
   top: 72px;
   cursor: pointer;
   border-radius: 8px;
@@ -524,11 +526,10 @@ span {
 .summary {
   list-style: none;
   font-size: 16px;
-  height: 0px;
   margin: 0 0 0 0;
   line-height: 28px;
   font-weight: 300;
-  position: sticky;
+  position: fixed;
   top: 400px;
   padding: 0;
   float: left;
@@ -555,7 +556,8 @@ span {
 }
 
 .project-content-container {
-  width: 50%;
+  max-width: 680px;
+  height: fit-content;
   margin: 0 auto;
 }
 
@@ -618,7 +620,6 @@ span {
   display: block;
   margin: 40px auto 0 auto;
   position: relative;
-  z-index: 9999;
 }
 
 #isuna-architecture {
@@ -626,7 +627,6 @@ span {
   display: block;
   margin: 40px auto 0 auto;
   position: relative;
-  z-index: 9999;
 }
 
 #isuna-branding {
@@ -634,7 +634,6 @@ span {
   display: block;
   margin: 40px auto 0 auto;
   position: relative;
-  z-index: 9999;
 }
 
 #isuna-screens {
@@ -642,7 +641,6 @@ span {
   display: block;
   margin: 40px auto 0 auto;
   position: relative;
-  z-index: 9999;
 }
 
 .overlay {

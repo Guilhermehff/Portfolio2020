@@ -146,7 +146,7 @@ $(document).ready(function() {
 
   $(".exit").click(function(e) {
 
-    var project = "." + $(this).parent().attr('class').split(' ').pop();
+    var project = "." + $(this).parent().parent().attr('class').split(' ').pop();
 
     $(project).css("pointer-events", "none");
     $(".scroll").css("overflow", "overlay");
