@@ -532,6 +532,10 @@ span {
   margin-left: 16px;
 }
 
+.exit {
+  box-shadow: 0 0 0 1pt white;
+}
+
 .summary {
   list-style: none;
   font-size: 16px;
@@ -597,6 +601,7 @@ span {
 
 .project-content-container:last-child {
   padding-bottom: 64px;
+  overflow: hidden;
 }
 
 .project-content-container ul {
@@ -644,11 +649,24 @@ span {
   padding: 16px;
   text-align: left;
   background-color: #F4FAFF;
-  margin: 0;
+  margin: 0 0 24px 0;
 }
 
 .thanks h1, .thanks p:nth-child(2) {
   color: white;
+  margin: 0;
+}
+
+.other-project {
+  background-color: #F4FAFF;
+  float: left;
+  padding: 8px 16px 8px 16px;
+  border-radius: 8px;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+.other-project h2, .other-project p {
   margin: 0;
 }
 
