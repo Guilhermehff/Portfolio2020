@@ -920,58 +920,58 @@ span {
 
 /* btwa project specific colors */
 .project-btwa .project-header {
-  background-color: #FEE27F;
+  background-color: #FF5D5C;
 }
 
 .project-btwa .summary a:hover {
-  color: #FEE27F;
+  color: #FF5D5C;
 }
 
 .project-btwa .summary a:hover:before {
-  background-color: #FEE27F;
+  background-color: #FF5D5C;
   width: 32px;
 }
 
 .project-btwa .active a {
-  color: #FEE27F;
+  color: #FF5D5C;
 }
 
 .project-btwa .active a:before {
-  background-color: #FEE27F;
+  background-color: #FF5D5C;
   width: 32px;
 }
 
 .project-btwa h2 {
-  color: #FEE27F;
+  color: #FF5D5C;
 }
 
 .project-btwa .project-details h3 {
-  color: #FEE27F;
+  color: #FF5D5C;
 }
 
 .project-btwa .project-details {
-  border-color: #FEE27F;
+  border-color: #FF5D5C;
 }
 
 .project-btwa ul li:before {
-  color: #FEE27F;
+  color: #FF5D5C;
 }
 
 .project-btwa span {
-  color: #FEE27F;
+  color: #FF5D5C;
 }
 
 .project-btwa .exit:hover {
-  background-color: #FEE27F;
+  background-color: #FF5D5C;
   stroke: white;
 }
 
 .project-btwa .thanks h1, .project-btwa .thanks p:nth-child(2) {
-  background-color: #FEE27F;
+  background-color: #FF5D5C;
 }
 
 .project-btwa .other-project:hover {
-  background-color: #FEE27F;
+  background-color: #FF5D5C;
 }
 
 @media only screen and (max-width: 1140px) {

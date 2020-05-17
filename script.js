@@ -4,7 +4,7 @@ $(document).ready(function() {
   var project;
   var menuItems = $(".summary").find("a");
   var isunaColor = '#FF708A';
-  var btwaColor = '#FEE27F';
+  var btwaColor = '#FF5D5C';
   var hubsterColor = '#FE844C';
   var accompColor = '#8DEEA2';
 
