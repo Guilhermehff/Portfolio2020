@@ -163,10 +163,16 @@ span {
   font-weight: 400;
   font-size: 18px;
   color: #444E56;
+  width: 90px;
+  text-align: center;
+}
+
+.links a:hover {
+  font-weight: 900;
 }
 
 .links a:nth-child(n+2) {
-  margin-left: 40px;
+  margin-left: 24px;
 }
 
 .additional-section {
@@ -345,7 +351,6 @@ span {
 /* .paper-arg:hover .add-title-2:before {
   right: 0;
 } */
-
 .paper-usa {
   /* cursor: pointer; */
   position: relative;
@@ -355,7 +360,6 @@ span {
 /* .paper-usa:hover .add-title-2:before {
   right: 0;
 } */
-
 .book {
   /* cursor: pointer; */
   position: relative;
@@ -365,7 +369,6 @@ span {
 /* .book:hover .add-title-2:before {
   right: 0;
 } */
-
 .project-details {
   display: flex;
   flex-direction: column;
@@ -481,7 +484,8 @@ span {
   opacity: 1;
   pointer-events: all;
 }
-.team-member-icon{
+
+.team-member-icon {
   display: block;
   float: left;
   margin-top: 16px;
@@ -561,7 +565,7 @@ span {
   font-weight: 900;
 }
 
-.project-content-container h1 + p {
+.project-content-container h1+p {
   font-style: italic;
   color: #8DA9BF;
   margin: 6px 0px 0px 0px;
@@ -734,9 +738,7 @@ span {
   display: none;
 }
 
-
 /* Isuna project specific colors */
-
 .project-isuna .summary a:hover {
   color: #FF708A;
 }
@@ -767,7 +769,6 @@ span {
   border-color: #FF708A;
 }
 
-
 .project-isuna ul li:before {
   color: #FF708A;
 }
@@ -776,15 +777,12 @@ span {
   color: #FF708A;
 }
 
-
 .project-isuna .exit:hover {
   background-color: #FF708A;
   stroke: white;
 }
 
 /* Hubster project specific colors */
-
-
 .project-hubster .summary a:hover {
   color: #FE844C;
 }
@@ -815,7 +813,6 @@ span {
   border-color: #FE844C;
 }
 
-
 .project-hubster ul li:before {
   color: #FE844C;
 }
@@ -824,12 +821,10 @@ span {
   color: #FE844C;
 }
 
-
 .project-hubster .exit:hover {
   background-color: #FE844C;
   stroke: white;
 }
-
 
 @media only screen and (max-width: 1140px) {
   .mobile-warning {
