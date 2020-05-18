@@ -300,6 +300,8 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  position: relative;
 }
 
 .project-info {
@@ -722,6 +724,7 @@ span {
 #btwa-logo {
   height: 60%;
   display: block;
+  position: absolute;
 }
 
 #btwa-logo img {
