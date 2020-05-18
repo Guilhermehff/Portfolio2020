@@ -133,6 +133,10 @@ $(document).ready(function() {
   });
 
 
+
+
+
+
   $(".other-project").click(function(e) {
 
     project = ".project-" + $(this).attr('class').split(' ').pop()
@@ -189,10 +193,14 @@ $(document).ready(function() {
     setTimeout(function() {
       $(oldproject).parent().parent().css("display", "none");
 
+      $( ".scroll" ).scrollTop( 0 );
       menuItems
         .parent().removeClass("active")
       $(".summary li:first-child").addClass("active");
+
+
     }, 700);
+
 
 
     $(project).delay(700).animate({
@@ -221,6 +229,12 @@ $(document).ready(function() {
     e.preventDefault();
 
   });
+
+
+
+
+
+
 
   // Anchors corresponding to menu items
   scrollItemsIsuna = $(".project-isuna .summary").find("a").map(function() {

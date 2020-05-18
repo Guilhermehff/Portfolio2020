@@ -708,6 +708,17 @@ span {
   height: 100%;
 }
 
+.hubster-img {
+  width: 100%;
+  display: block;
+  margin: 40px auto 0 auto;
+  position: relative;
+}
+
+.hubster-img img{
+  width: 100%;
+}
+
 #btwa-logo {
   height: 60%;
   display: block;
