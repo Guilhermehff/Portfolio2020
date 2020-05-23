@@ -30,16 +30,13 @@ ul {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 8px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: #F4FAFF;
+  width: 6px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #A7BFD3;
+  background: #F4FAFF;
+  border: 1px solid transparent;
+  background-clip: content-box;
   border-radius: 20px;
 }
 
@@ -280,8 +277,7 @@ span {
 
 .project {
   width: 100%;
-  position: relative;
-  background-color: white;
+  position: absolute;
   z-index: 1;
   opacity: 0;
   pointer-events: none;

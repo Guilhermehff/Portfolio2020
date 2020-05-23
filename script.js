@@ -8,6 +8,10 @@ $(document).ready(function() {
   var hubsterColor = '#FE844C';
   var accompColor = '#8DEEA2';
 
+  var scrollIsuna = "<style id='scrollHead' type='text/css'>::-webkit-scrollbar-track{background: #FF708A;}</style>";
+  var scrollBtwa = "<style id='scrollHead' type='text/css'>::-webkit-scrollbar-track{background: #FF5D5C;}</style>";
+  var scrollHubster = "<style id='scrollHead' type='text/css'>::-webkit-scrollbar-track{background: #FE844C;}</style>";
+
   // Anchors corresponding to menu items
   function scrollSummary(scrollSection, currentProject) {
     // Get container scroll position
@@ -59,7 +63,12 @@ $(document).ready(function() {
   // Disable Scroll
   // left: 37, up: 38, right: 39, down: 40,
   // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-  var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+  var keys = {
+    37: 1,
+    38: 1,
+    39: 1,
+    40: 1
+  };
 
   function preventDefault(e) {
     e.preventDefault();
@@ -76,11 +85,15 @@ $(document).ready(function() {
   var supportsPassive = false;
   try {
     window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-      get: function () { supportsPassive = true; }
+      get: function() {
+        supportsPassive = true;
+      }
     }));
-  } catch(e) {}
+  } catch (e) {}
 
-  var wheelOpt = supportsPassive ? { passive: false } : false;
+  var wheelOpt = supportsPassive ? {
+    passive: false
+  } : false;
   var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 
   // call this to Disable
@@ -136,10 +149,13 @@ $(document).ready(function() {
     project = ".project-" + $(this).attr('class');
 
     if ($(this).hasClass('isuna')) {
+      $(scrollIsuna).appendTo('head');
       $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", isunaColor);
     } else if ($(this).hasClass('hubster')) {
+      $(scrollHubster).appendTo('head');
       $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", hubsterColor);
     } else if ($(this).hasClass('btwa')) {
+      $(scrollBtwa).appendTo('head');
       $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", btwaColor);
     }
 
@@ -173,9 +189,9 @@ $(document).ready(function() {
     }, 0);
 
     setTimeout(function() {
-    $(".container-horizontal").css("display", "none");
-    $("body").css("overflow-y", "overlay");
-    disableScroll();
+      $(".container-horizontal").css("display", "none");
+      $("body").css("overflow-y", "overlay");
+      disableScroll();
 
       menuItems
         .parent().removeClass("active")
@@ -217,10 +233,13 @@ $(document).ready(function() {
     var oldproject = $(this)
 
     if ($(this).hasClass('isuna')) {
+      $(scrollIsuna).appendTo('head');
       $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", isunaColor);
     } else if ($(this).hasClass('hubster')) {
+      $(scrollHubster).appendTo('head');
       $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", hubsterColor);
     } else if ($(this).hasClass('btwa')) {
+      $(scrollBtwa).appendTo('head');
       $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", btwaColor);
     }
 
@@ -267,7 +286,7 @@ $(document).ready(function() {
     setTimeout(function() {
       $(oldproject).parent().parent().css("display", "none");
 
-      $( ".scroll" ).scrollTop( 0 );
+      $(".scroll").scrollTop(0);
       menuItems
         .parent().removeClass("active")
       $(".summary li:first-child").addClass("active");
@@ -338,9 +357,9 @@ $(document).ready(function() {
     }, 0);
 
     setTimeout(function() {
-    $(".container-horizontal").css("display", "flex");
-    $("body").css("overflow-y", "hidden");
-    enableScroll();
+      $(".container-horizontal").css("display", "flex");
+      $("body").css("overflow-y", "hidden");
+      enableScroll();
     }, 700);
 
 
@@ -363,6 +382,7 @@ $(document).ready(function() {
     setTimeout(function() {
       $(project).css("display", "none");
       $(".container-horizontal").css("pointer-events", "all");
+      $("head").children("#scrollHead").remove();
     }, 1200);
 
 
