@@ -30,19 +30,14 @@ ul {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #F4FAFF;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   background-clip: content-box;
   border-radius: 20px;
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #444E56;
 }
 
 .rotate-1 {

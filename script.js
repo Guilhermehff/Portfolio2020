@@ -12,10 +12,71 @@ $(document).ready(function() {
   var scrollBtwa = "<style id='scrollHead' type='text/css'>::-webkit-scrollbar-track{background: #FF5D5C;}</style>";
   var scrollHubster = "<style id='scrollHead' type='text/css'>::-webkit-scrollbar-track{background: #FE844C;}</style>";
 
+
+
+
+    // Disable Scroll
+    // left: 37, up: 38, right: 39, down: 40,
+    // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+    var keys = {
+      37: 1,
+      38: 1,
+      39: 1,
+      40: 1
+    };
+
+    function preventDefault(e) {
+      e.preventDefault();
+    }
+
+    function preventDefaultForScrollKeys(e) {
+      if (keys[e.keyCode]) {
+        preventDefault(e);
+        return false;
+      }
+    }
+
+    // modern Chrome requires { passive: false } when adding event
+    var supportsPassive = false;
+    try {
+      window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+        get: function() {
+          supportsPassive = true;
+        }
+      }));
+    } catch (e) {}
+
+    var wheelOpt = supportsPassive ? {
+      passive: false
+    } : false;
+    var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+    // call this to Disable
+    function disableScroll() {
+      window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+      window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+      window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+      window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+    }
+
+    // call this to Enable
+    function enableScroll() {
+      window.removeEventListener('DOMMouseScroll', preventDefault, false);
+      window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+      window.removeEventListener('touchmove', preventDefault, wheelOpt);
+      window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+    }
+
+
+
+
+
+
+
   // Anchors corresponding to menu items
   function scrollSummary(scrollSection, currentProject) {
     // Get container scroll position
-    var fromTop = $(".scroll").scrollTop();
+    var fromTop = $(window).scrollTop();
     // Get id of current scroll item
     var cur = scrollSection.map(function() {
       if ($(this).position().top - $(window).height() / 8 < fromTop)
@@ -34,13 +95,15 @@ $(document).ready(function() {
         .end().filter("[href='#" + id + "']").parent().addClass("active");
     }
 
-    if ($(".scroll").scrollTop() + $(".scroll").innerHeight() >= $(currentProject)[0].scrollHeight) {
+    if ($(window).scrollTop() + $(window).innerHeight() >= $(currentProject)[0].scrollHeight) {
       menuItems
         .parent().removeClass("active")
       $(".summary li:last-child").addClass("active");
       lastId = "end";
     }
   }
+
+
 
   scrollItemsIsuna = $(".project-isuna .summary").find("a").map(function() {
     var item = $($(this).attr("href"));
@@ -55,65 +118,6 @@ $(document).ready(function() {
       return item;
     }
   });
-
-
-
-
-
-  // Disable Scroll
-  // left: 37, up: 38, right: 39, down: 40,
-  // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-  var keys = {
-    37: 1,
-    38: 1,
-    39: 1,
-    40: 1
-  };
-
-  function preventDefault(e) {
-    e.preventDefault();
-  }
-
-  function preventDefaultForScrollKeys(e) {
-    if (keys[e.keyCode]) {
-      preventDefault(e);
-      return false;
-    }
-  }
-
-  // modern Chrome requires { passive: false } when adding event
-  var supportsPassive = false;
-  try {
-    window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-      get: function() {
-        supportsPassive = true;
-      }
-    }));
-  } catch (e) {}
-
-  var wheelOpt = supportsPassive ? {
-    passive: false
-  } : false;
-  var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
-
-  // call this to Disable
-  function disableScroll() {
-    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
-  }
-
-  // call this to Enable
-  function enableScroll() {
-    window.removeEventListener('DOMMouseScroll', preventDefault, false);
-    window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
-    window.removeEventListener('touchmove', preventDefault, wheelOpt);
-    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
-  }
-
-
-
 
 
 
@@ -140,8 +144,6 @@ $(document).ready(function() {
       $('.rotate-1').css('stroke', '#A7BFD3');
       $('.rotate-2').css('stroke', '#A7BFD3');
     });
-
-
 
 
   $(".selected-projects-info div").click(function(e) {
@@ -229,6 +231,7 @@ $(document).ready(function() {
 
   $(".other-project").click(function(e) {
 
+    disableScroll()
     project = ".project-" + $(this).attr('class').split(' ').pop()
     var oldproject = $(this)
 
@@ -286,7 +289,7 @@ $(document).ready(function() {
     setTimeout(function() {
       $(oldproject).parent().parent().css("display", "none");
 
-      $(".scroll").scrollTop(0);
+      $(window).scrollTop(0);
       menuItems
         .parent().removeClass("active")
       $(".summary li:first-child").addClass("active");
@@ -316,6 +319,7 @@ $(document).ready(function() {
 
     setTimeout(function() {
       $(project).css("pointer-events", "all");
+      enableScroll()
     }, 1500);
 
 
@@ -402,11 +406,11 @@ $(document).ready(function() {
   menuItems.click(function(e) {
 
     var href = $(this).attr("href"),
-      offsetTop = href === "#" ? 0 : $(href).position().top;
+      offsetTop = href === "#" ? 0 : $(href).offset().top;
 
-    $('.scroll').stop().animate({
-      scrollTop: offsetTop + 10
-    }, 850);
+      $('html, body').stop().animate({
+          scrollTop: offsetTop
+      }, 850);
 
     e.preventDefault();
 
@@ -414,7 +418,7 @@ $(document).ready(function() {
 
 
   // Bind to scroll
-  $(".scroll").scroll(function() {
+  $(window).scroll(function() {
 
     if (project == ".project-isuna") {
 
