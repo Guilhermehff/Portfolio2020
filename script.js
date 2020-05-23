@@ -361,6 +361,7 @@ $(document).ready(function() {
     }, 0);
 
     setTimeout(function() {
+      $(window).scrollTop(0);
       $(".container-horizontal").css("display", "flex");
       $("body").css("overflow-y", "hidden");
       enableScroll();
