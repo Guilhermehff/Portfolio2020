@@ -8,6 +8,7 @@ $(document).ready(function() {
   var hubsterColor = '#FE844C';
   var accompColor = '#8DEEA2';
 
+  // Anchors corresponding to menu items
   function scrollSummary(scrollSection, currentProject) {
     // Get container scroll position
     var fromTop = $(".scroll").scrollTop();
@@ -37,6 +38,72 @@ $(document).ready(function() {
     }
   }
 
+  scrollItemsIsuna = $(".project-isuna .summary").find("a").map(function() {
+    var item = $($(this).attr("href"));
+    if (item.length) {
+      return item;
+    }
+  });
+
+  scrollItemsHubster = $(".project-hubster .summary").find("a").map(function() {
+    var item = $($(this).attr("href"));
+    if (item.length) {
+      return item;
+    }
+  });
+
+
+
+
+
+  // Disable Scroll
+  // left: 37, up: 38, right: 39, down: 40,
+  // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+  var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+  function preventDefault(e) {
+    e.preventDefault();
+  }
+
+  function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+      preventDefault(e);
+      return false;
+    }
+  }
+
+  // modern Chrome requires { passive: false } when adding event
+  var supportsPassive = false;
+  try {
+    window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+      get: function () { supportsPassive = true; }
+    }));
+  } catch(e) {}
+
+  var wheelOpt = supportsPassive ? { passive: false } : false;
+  var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+
+  // call this to Disable
+  function disableScroll() {
+    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+  }
+
+  // call this to Enable
+  function enableScroll() {
+    window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+    window.removeEventListener('touchmove', preventDefault, wheelOpt);
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+  }
+
+
+
+
+
+
 
   $(".selected-projects-info div").hover(
     function() {
@@ -62,6 +129,8 @@ $(document).ready(function() {
     });
 
 
+
+
   $(".selected-projects-info div").click(function(e) {
 
     project = ".project-" + $(this).attr('class');
@@ -76,8 +145,7 @@ $(document).ready(function() {
 
 
     $(project).css("display", "block");
-    $(".container-vertical").css("pointer-events", "none");
-    $(".scroll").css("overflow", "overlay");
+    $(".container-horizontal").css("pointer-events", "none");
     $(".panel-1").animate({
       "left": "0%"
     }, 500);
@@ -92,10 +160,12 @@ $(document).ready(function() {
     }, 500);
 
 
+
+
     $(project).delay(700).animate({
       "opacity": "1"
     }, 0);
-    $(".container-vertical").delay(700).animate({
+    $(".container-horizontal").delay(700).animate({
       "opacity": "0"
     }, 0);
     $("body").delay(700).animate({
@@ -103,10 +173,17 @@ $(document).ready(function() {
     }, 0);
 
     setTimeout(function() {
+    $(".container-horizontal").css("display", "none");
+    $("body").css("overflow-y", "overlay");
+    disableScroll();
+
       menuItems
         .parent().removeClass("active")
       $(".summary li:first-child").addClass("active");
     }, 700);
+
+
+
 
 
     $(".panel-1").delay(200).animate({
@@ -124,6 +201,7 @@ $(document).ready(function() {
 
     setTimeout(function() {
       $(project).css("pointer-events", "all");
+      enableScroll();
     }, 1500);
 
 
@@ -131,10 +209,6 @@ $(document).ready(function() {
 
 
   });
-
-
-
-
 
 
   $(".other-project").click(function(e) {
@@ -231,33 +305,12 @@ $(document).ready(function() {
   });
 
 
-
-
-
-
-
-  // Anchors corresponding to menu items
-  scrollItemsIsuna = $(".project-isuna .summary").find("a").map(function() {
-    var item = $($(this).attr("href"));
-    if (item.length) {
-      return item;
-    }
-  });
-
-  scrollItemsHubster = $(".project-hubster .summary").find("a").map(function() {
-    var item = $($(this).attr("href"));
-    if (item.length) {
-      return item;
-    }
-  });
-
-
   $(".exit").click(function(e) {
 
     var project = "." + $(this).parent().parent().attr('class').split(' ').pop();
 
     $(project).css("pointer-events", "none");
-    $(".scroll").css("overflow", "overlay");
+    disableScroll();
 
     $(".panel-1").animate({
       "right": "0%"
@@ -273,15 +326,23 @@ $(document).ready(function() {
     }, 500);
 
 
+
     $(project).delay(700).animate({
       "opacity": "0"
     }, 0);
-    $(".container-vertical").delay(700).animate({
+    $(".container-horizontal").delay(700).animate({
       "opacity": "1"
     }, 0);
     $("body").delay(700).animate({
       "background-color": "#F4FAFF"
     }, 0);
+
+    setTimeout(function() {
+    $(".container-horizontal").css("display", "flex");
+    $("body").css("overflow-y", "hidden");
+    enableScroll();
+    }, 700);
+
 
 
     $(".panel-1").delay(200).animate({
@@ -298,16 +359,22 @@ $(document).ready(function() {
     }, 500);
 
 
+
     setTimeout(function() {
       $(project).css("display", "none");
-      $(".container-vertical").css("pointer-events", "all");
+      $(".container-horizontal").css("pointer-events", "all");
     }, 1200);
+
 
 
     e.preventDefault();
 
 
   });
+
+
+
+
 
 
   // Bind click handler to menu items

@@ -4,7 +4,8 @@ body {
   background-color: #F4FAFF;
   margin: 0;
   font-family: Roboto;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 h1 {
@@ -43,7 +44,7 @@ ul {
 }
 
 /* Handle on hover */
-.scroll::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
   background: #444E56;
 }
 
@@ -275,14 +276,6 @@ span {
 
 .accomplishments {
   margin-top: 96px;
-}
-
-.scroll {
-  overflow: hidden;
-  overflow-x: hidden;
-  position: absolute;
-  height: 100%;
-  width: 100%;
 }
 
 .project {
