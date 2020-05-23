@@ -288,6 +288,10 @@ span {
   position: relative;
 }
 
+.header-img {
+  width: 100%;
+}
+
 .project-info {
   width: 100%;
   max-width: 1366px;
@@ -668,6 +672,7 @@ span {
 #isuna-logo {
   height: 100%;
   display: block;
+  z-index: 2;
 }
 
 #isuna-logo img {
@@ -681,13 +686,14 @@ span {
   position: relative;
 }
 
-.isuna-img img{
+.isuna-img img {
   width: 100%;
 }
 
 #hubster-logo {
   height: 20%;
   display: block;
+  z-index: 2;
 }
 
 #hubster-logo img {
@@ -701,7 +707,7 @@ span {
   position: relative;
 }
 
-.hubster-img img{
+.hubster-img img {
   width: 100%;
 }
 
@@ -709,6 +715,7 @@ span {
   height: 60%;
   display: block;
   position: absolute;
+  z-index: 2;
 }
 
 #btwa-logo img {
@@ -811,7 +818,6 @@ span {
 .project-btwa {
   display: none;
 }
-
 
 /* Isuna project specific colors */
 .project-isuna .project-header {

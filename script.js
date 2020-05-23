@@ -12,7 +12,8 @@ $(document).ready(function() {
   var scrollBtwa = "<style id='scrollHead' type='text/css'>::-webkit-scrollbar-track{background: #FF5D5C;}</style>";
   var scrollHubster = "<style id='scrollHead' type='text/css'>::-webkit-scrollbar-track{background: #FE844C;}</style>";
 
-
+  // Parallax
+  var rellax = new Rellax('.rellax');
 
 
     // Disable Scroll
