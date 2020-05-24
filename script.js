@@ -8,10 +8,6 @@ $(document).ready(function() {
   var hubsterColor = '#FE844C';
   var accompColor = '#8DEEA2';
 
-  var scrollIsuna = "<style id='scrollHead' type='text/css'>::-webkit-scrollbar-track{background: #FF708A;}</style>";
-  var scrollBtwa = "<style id='scrollHead' type='text/css'>::-webkit-scrollbar-track{background: #FF5D5C;}</style>";
-  var scrollHubster = "<style id='scrollHead' type='text/css'>::-webkit-scrollbar-track{background: #FE844C;}</style>";
-
   // Parallax
   var rellax = new Rellax('.rellax');
 
@@ -68,10 +64,12 @@ $(document).ready(function() {
       window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
     }
 
-
-
-
-
+    function progressBar(myBar) {
+      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+      document.getElementById(myBar).style.width = scrolled + "%";
+    }
 
 
   // Anchors corresponding to menu items
@@ -160,13 +158,10 @@ $(document).ready(function() {
     project = ".project-" + $(this).attr('class');
 
     if ($(this).hasClass('isuna')) {
-      $(scrollIsuna).appendTo('head');
       $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", isunaColor);
     } else if ($(this).hasClass('hubster')) {
-      $(scrollHubster).appendTo('head');
       $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", hubsterColor);
     } else if ($(this).hasClass('btwa')) {
-      $(scrollBtwa).appendTo('head');
       $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", btwaColor);
     }
 
@@ -245,13 +240,10 @@ $(document).ready(function() {
     var oldproject = $(this)
 
     if ($(this).hasClass('isuna')) {
-      $(scrollIsuna).appendTo('head');
       $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", isunaColor);
     } else if ($(this).hasClass('hubster')) {
-      $(scrollHubster).appendTo('head');
       $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", hubsterColor);
     } else if ($(this).hasClass('btwa')) {
-      $(scrollBtwa).appendTo('head');
       $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", btwaColor);
     }
 
@@ -396,7 +388,6 @@ $(document).ready(function() {
     setTimeout(function() {
       $(project).css("display", "none");
       $(".container-horizontal").css("pointer-events", "all");
-      $("head").children("#scrollHead").remove();
     }, 1200);
 
 
@@ -430,16 +421,21 @@ $(document).ready(function() {
   // Bind to scroll
   $(window).scroll(function() {
 
+
+
     if (project == ".project-isuna") {
 
+      progressBar("isunaBar");
       scrollSummary(scrollItemsIsuna, project);
 
     } else if (project == ".project-hubster") {
 
+      progressBar("hubsterBar");
       scrollSummary(scrollItemsHubster, project);
 
     } else if (project == ".project-btwa") {
 
+      progressBar("btwaBar");
       scrollSummary(scrollItemsBtwa, project);
 
     }

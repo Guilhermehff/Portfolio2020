@@ -28,18 +28,6 @@ ul {
   color: #444E56;
 }
 
-/* width */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #F4FAFF;
-  border: 2px solid transparent;
-  background-clip: content-box;
-  border-radius: 20px;
-}
-
 .rotate-1 {
   stroke-width: 2px;
   stroke: #A7BFD3;
@@ -276,6 +264,23 @@ span {
   z-index: 1;
   opacity: 0;
   pointer-events: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.progress-container {
+  top: 0;
+  width: 100%;
+  height: 8px;
+  position: sticky;
+  z-index: 1;
+}
+
+.progress-bar {
+  height: 8px;
+  width: 0%;
 }
 
 .project-header {
@@ -887,6 +892,10 @@ span {
   background-color: #FF708A;
 }
 
+.project-isuna .progress-bar {
+  background-color: #FF708A;
+}
+
 /* Hubster project specific colors */
 .project-hubster .project-header {
   background-color: #2F373D;
@@ -943,6 +952,10 @@ span {
   background-color: #FE844C;
 }
 
+.project-hubster .progress-bar {
+  background-color: #FE844C;
+}
+
 /* btwa project specific colors */
 .project-btwa .project-header {
   background-color: #FF5D5C;
@@ -996,6 +1009,10 @@ span {
 }
 
 .project-btwa .other-project:hover {
+  background-color: #FF5D5C;
+}
+
+.project-btwa .progress-bar {
   background-color: #FF5D5C;
 }
 
