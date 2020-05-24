@@ -14,9 +14,25 @@ $(document).ready(function() {
 
   // Parallax
   var rellax = new Rellax('.rellax');
-  var rellaxBtwa = new Rellax('.btwa-rellax', {
-    wrapper: '.parallax-box',
-    relativeToWrapper: true
+  var rellaxBtwa = new Rellax('#city-rellax', {
+    wrapper: '#city-box',
+    relativeToWrapper: true,
+    center: true
+  });
+  var rellaxBtwa = new Rellax('#farm-day-rellax', {
+    wrapper: '#farm-day-box',
+    relativeToWrapper: true,
+    center: true
+  });
+  var rellaxBtwa = new Rellax('#office-rellax', {
+    wrapper: '#office-box',
+    relativeToWrapper: true,
+    center: true
+  });
+  var rellaxBtwa = new Rellax('#ritual-rellax', {
+    wrapper: '#ritual-box',
+    relativeToWrapper: true,
+    center: true
   });
 
 

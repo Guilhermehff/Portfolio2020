@@ -300,21 +300,19 @@ span {
 
 .parallax-box {
   width: 100%;
-  height: 590px;
+  max-height: 500px;
   margin-top: 24px;
+  margin-bottom: 4px;
   display: flex;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
-  position: relative;
 }
 
 .parallax-box ~ .parallax-box {
-      margin-top: 0;
+  margin-top: 0;
 }
 
 .full-img {
-  width: 110%;
+  width: 140%;
   max-width: 2560px;
 }
 
