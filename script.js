@@ -120,6 +120,14 @@ $(document).ready(function() {
     }
   });
 
+  scrollItemsBtwa = $(".project-btwa .summary").find("a").map(function() {
+    var item = $($(this).attr("href"));
+    if (item.length) {
+      return item;
+    }
+  });
+
+
 
 
 
@@ -429,6 +437,10 @@ $(document).ready(function() {
     } else if (project == ".project-hubster") {
 
       scrollSummary(scrollItemsHubster, project);
+
+    } else if (project == ".project-btwa") {
+
+      scrollSummary(scrollItemsBtwa, project);
 
     }
 
