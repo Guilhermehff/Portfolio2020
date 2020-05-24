@@ -1,3 +1,7 @@
+$(window).on('beforeunload', function() {
+    $(window).scrollTop(0);
+});
+
 $(document).ready(function() {
 
   var lastId;
@@ -10,7 +14,7 @@ $(document).ready(function() {
 
   // Parallax
   var rellax = new Rellax('.rellax');
-
+  $(this).scrollTop(0);
 
     // Disable Scroll
     // left: 37, up: 38, right: 39, down: 40,

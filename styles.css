@@ -75,7 +75,7 @@ ul {
   position: absolute;
   z-index: -1;
   left: -340px;
-  top: 460px;
+  top: 520px;
 }
 
 .visual-element-2 {
@@ -116,19 +116,24 @@ ul {
   color: #A7BFD3;
 }
 
-.heading-1 {
+.main h1 {
   font-family: Roboto;
   font-weight: 900;
   font-size: 64px;
   margin: 32px 0 0 16px;
 }
 
-.body-1 {
+.main p:first-of-type {
+  margin: 24px 0 0 64px;
+}
+
+.main p {
   font-family: Roboto;
   font-weight: 400;
-  margin: 24px 0 0 64px;
+  margin: 8px 0 0 64px;
   font-size: 18px;
   line-height: 28px;
+  max-width: 520px;
 }
 
 span {
@@ -379,6 +384,7 @@ span {
 /* .book:hover .add-title-2:before {
   right: 0;
 } */
+
 .project-details {
   display: flex;
   flex-direction: column;
@@ -738,6 +744,11 @@ span {
 
 #btwa-logo img {
   height: 100%;
+}
+
+video {
+  margin: 0 auto;
+  display: block;
 }
 
 .overlay {
