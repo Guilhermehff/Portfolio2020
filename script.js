@@ -1,5 +1,5 @@
 $(window).on('beforeunload', function() {
-    $(window).scrollTop(0);
+  $(window).scrollTop(0);
 });
 
 $(document).ready(function() {
@@ -14,66 +14,70 @@ $(document).ready(function() {
 
   // Parallax
   var rellax = new Rellax('.rellax');
-  $(this).scrollTop(0);
+  var rellaxBtwa = new Rellax('.btwa-rellax', {
+    wrapper: '.parallax-box',
+    relativeToWrapper: true
+  });
 
-    // Disable Scroll
-    // left: 37, up: 38, right: 39, down: 40,
-    // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
-    var keys = {
-      37: 1,
-      38: 1,
-      39: 1,
-      40: 1
-    };
 
-    function preventDefault(e) {
-      e.preventDefault();
+  // Disable Scroll
+  // left: 37, up: 38, right: 39, down: 40,
+  // spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+  var keys = {
+    37: 1,
+    38: 1,
+    39: 1,
+    40: 1
+  };
+
+  function preventDefault(e) {
+    e.preventDefault();
+  }
+
+  function preventDefaultForScrollKeys(e) {
+    if (keys[e.keyCode]) {
+      preventDefault(e);
+      return false;
     }
+  }
 
-    function preventDefaultForScrollKeys(e) {
-      if (keys[e.keyCode]) {
-        preventDefault(e);
-        return false;
+  // modern Chrome requires { passive: false } when adding event
+  var supportsPassive = false;
+  try {
+    window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
+      get: function() {
+        supportsPassive = true;
       }
-    }
+    }));
+  } catch (e) {}
 
-    // modern Chrome requires { passive: false } when adding event
-    var supportsPassive = false;
-    try {
-      window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-        get: function() {
-          supportsPassive = true;
-        }
-      }));
-    } catch (e) {}
+  var wheelOpt = supportsPassive ? {
+    passive: false
+  } : false;
+  var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
 
-    var wheelOpt = supportsPassive ? {
-      passive: false
-    } : false;
-    var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+  // call this to Disable
+  function disableScroll() {
+    window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
+    window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
+    window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
+    window.addEventListener('keydown', preventDefaultForScrollKeys, false);
+  }
 
-    // call this to Disable
-    function disableScroll() {
-      window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
-      window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
-      window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile
-      window.addEventListener('keydown', preventDefaultForScrollKeys, false);
-    }
+  // call this to Enable
+  function enableScroll() {
+    window.removeEventListener('DOMMouseScroll', preventDefault, false);
+    window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
+    window.removeEventListener('touchmove', preventDefault, wheelOpt);
+    window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
+  }
 
-    // call this to Enable
-    function enableScroll() {
-      window.removeEventListener('DOMMouseScroll', preventDefault, false);
-      window.removeEventListener(wheelEvent, preventDefault, wheelOpt);
-      window.removeEventListener('touchmove', preventDefault, wheelOpt);
-      window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
-    }
-
-    function progressBar(myBar) {
-      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      var scrolled = (winScroll / height) * 100;
-      document.getElementById(myBar).style.width = scrolled + "%";
-    }
+  function progressBar(myBar) {
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById(myBar).style.width = scrolled + "%";
+  }
 
 
   // Anchors corresponding to menu items
@@ -413,9 +417,9 @@ $(document).ready(function() {
     var href = $(this).attr("href"),
       offsetTop = href === "#" ? 0 : $(href).offset().top;
 
-      $('html, body').stop().animate({
-          scrollTop: offsetTop
-      }, 850);
+    $('html, body').stop().animate({
+      scrollTop: offsetTop
+    }, 850);
 
     e.preventDefault();
 
