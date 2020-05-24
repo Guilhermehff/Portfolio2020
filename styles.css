@@ -561,6 +561,14 @@ span {
   color: #A7BFD3;
 }
 
+.sub-items {
+  font-size: 14px;
+}
+
+.sub-items a::before {
+  margin-left: 8px;
+}
+
 .project-content-container {
   max-width: 672px;
   height: fit-content;
@@ -620,6 +628,10 @@ span {
   display: inline-block;
   width: 1em;
   margin-left: -1em;
+}
+
+#key-design, #gameplay, #branding-visual, #playtests {
+  font-size: 18px;
 }
 
 .thanks {
