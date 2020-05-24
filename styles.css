@@ -307,7 +307,7 @@ span {
   overflow: hidden;
 }
 
-.parallax-box ~ .parallax-box {
+.parallax-box~.parallax-box {
   margin-top: 0;
 }
 
@@ -694,6 +694,8 @@ span {
   margin-top: 16px;
   cursor: pointer;
   transition: 0.2s ease;
+  float: left;
+  clear: both;
 }
 
 .other-project h2, .other-project p {
