@@ -117,23 +117,28 @@ ul {
 }
 
 .main h1 {
+  position: absolute;
+  z-index: -10;
+  color: white;
   font-family: Roboto;
+  left: -150px;
+  top: -150px;
   font-weight: 900;
-  font-size: 64px;
+  font-size: 128px;
   margin: 32px 0 0 16px;
 }
 
 .main p:first-of-type {
-  margin: 24px 0 0 64px;
+  margin: 24px 0 0 16px;
 }
 
 .main p {
   font-family: Roboto;
   font-weight: 400;
-  margin: 8px 0 0 64px;
+  margin: 8px 0 0 16px;
   font-size: 18px;
   line-height: 28px;
-  max-width: 520px;
+  max-width: 600px;
 }
 
 span {
