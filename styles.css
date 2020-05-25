@@ -86,7 +86,7 @@ ul {
 }
 
 .main {
-  width: 631px;
+  max-width: 640px;
   height: 400px;
   position: relative;
 }
@@ -118,7 +118,7 @@ ul {
 }
 
 .main img {
-  left: 24px;
+  left: 32px;
   top: -140px;
   z-index: -11;
   width: 260px;
@@ -132,7 +132,7 @@ ul {
   z-index: -10;
   color: white;
   font-family: Roboto;
-  left: 96px;
+  left: 104px;
   top: -144px;
   font-weight: 900;
   font-size: 88px;
@@ -141,7 +141,7 @@ ul {
 
 .main>p:first-of-type {
   font-size: 24px;
-  margin: 140px 0 0 16px;
+  margin: 160px 0 0 16px;
 }
 
 .main p {
@@ -150,7 +150,7 @@ ul {
   margin: 8px 0 0 16px;
   font-size: 18px;
   line-height: 28px;
-  max-width: 620px;
+  max-width: 640px;
 }
 
 span {
