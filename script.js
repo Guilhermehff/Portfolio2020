@@ -12,6 +12,104 @@ $(document).ready(function() {
   var hubsterColor = '#FE844C';
   var accompColor = '#8DEEA2';
 
+  // Cursor variables
+  var cursor = $(".cursor");
+  var cursorBox = $(".cursor-box");
+  var cursorPointer = $(".cursor-pointer");
+  var timestamp = 0;
+  var mY = 0;
+  var mX = 0;
+
+  //Cursor code
+
+  $(window).mousemove(function(e) {
+    var now = Date.now();
+    currentmY = e.clientY;
+    currentmX = e.clientX;
+
+    // getting distance
+    var dt = now - timestamp;
+    var distanceY = (currentmY - mY);
+    var distanceX = (currentmX - mX);
+
+    // getting angle
+    var rad = Math.atan2(distanceY, distanceX);
+
+    // getting speed
+    var speedY = Math.abs(distanceY / dt * 1000);
+    var speedX = Math.abs(distanceX / dt * 1000);
+
+    var deform = speedX / 2500 + speedY / 2500 + 1;
+
+    if (deform > 3) {
+      deform = 3;
+    }
+
+    mY = currentmY;
+    mX = currentmX;
+    timestamp = now;
+
+    cursorBox.css({
+      top: e.clientY - cursorBox.height() / 2,
+      left: e.clientX - cursorBox.width() / 2
+    });
+
+    cursor.css({
+      transform: "rotate(" + rad + "rad) scaleX(" + deform + ")"
+    });
+
+  });
+
+
+  $(window)
+    .mouseleave(function() {
+      cursor.css({
+        opacity: "0"
+      });
+    })
+    .mouseenter(function() {
+      cursor.css({
+        opacity: "1"
+      });
+    });
+
+
+  $(".pointer, .exit, .team-member-icon, .other-project, .sub-items, .isuna, .hubster, .btwa")
+    .mouseenter(function() {
+      cursor.css({
+        margin: "14px"
+      });
+      cursorPointer.css({
+        margin: "0px"
+      });
+    })
+    .mouseleave(function() {
+      cursor.css({
+        margin: "0px"
+      });
+      cursorPointer.css({
+        margin: "18px"
+      });
+    });
+
+  $(window)
+    .mousedown(function(e) {
+      if (e.button == 0) {
+        cursor.css({
+          margin: "18px"
+        });
+      }
+    })
+    .mouseup(function(e) {
+      if (e.button == 0) {
+        cursor.css({
+          margin: "0px"
+        });
+      }
+    });
+
+
+
   // Parallax
   var rellax = new Rellax('.rellax');
   var rellaxBtwa = new Rellax('#city-rellax', {
