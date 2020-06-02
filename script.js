@@ -80,7 +80,7 @@ $(document).ready(function() {
         margin: "14px"
       });
       cursorPointer.css({
-        margin: "0px"
+        margin: "2px"
       });
     })
     .mouseleave(function() {
@@ -280,11 +280,11 @@ $(document).ready(function() {
     project = ".project-" + $(this).attr('class');
 
     if ($(this).hasClass('isuna')) {
-      $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", isunaColor);
+      $(".panel-1, .panel-2, .panel-3, .panel-4, .cursor-pointer").css("background-color", isunaColor);
     } else if ($(this).hasClass('hubster')) {
-      $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", hubsterColor);
+      $(".panel-1, .panel-2, .panel-3, .panel-4, .cursor-pointer").css("background-color", hubsterColor);
     } else if ($(this).hasClass('btwa')) {
-      $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", btwaColor);
+      $(".panel-1, .panel-2, .panel-3, .panel-4, .cursor-pointer").css("background-color", btwaColor);
     }
 
 
@@ -362,11 +362,11 @@ $(document).ready(function() {
     var oldproject = $(this)
 
     if ($(this).hasClass('isuna')) {
-      $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", isunaColor);
+      $(".panel-1, .panel-2, .panel-3, .panel-4, .cursor-pointer").css("background-color", isunaColor);
     } else if ($(this).hasClass('hubster')) {
-      $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", hubsterColor);
+      $(".panel-1, .panel-2, .panel-3, .panel-4, .cursor-pointer").css("background-color", hubsterColor);
     } else if ($(this).hasClass('btwa')) {
-      $(".panel-1, .panel-2, .panel-3, .panel-4").css("background-color", btwaColor);
+      $(".panel-1, .panel-2, .panel-3, .panel-4, .cursor-pointer").css("background-color", btwaColor);
     }
 
     $(".panel-1").css({
@@ -454,6 +454,7 @@ $(document).ready(function() {
   $(".exit").click(function(e) {
 
     var project = "." + $(this).parent().parent().attr('class').split(' ').pop();
+    $(".cursor-pointer").css("background-color", "#444E56");
 
     $(project).css("pointer-events", "none");
     disableScroll();
