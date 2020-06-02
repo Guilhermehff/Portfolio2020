@@ -41,8 +41,8 @@ $(document).ready(function() {
 
     var deform = speedX / 2500 + speedY / 2500 + 1;
 
-    if (deform > 3) {
-      deform = 3;
+    if (deform > 3.5) {
+      deform = 3.5;
     }
 
     mY = currentmY;
@@ -80,7 +80,7 @@ $(document).ready(function() {
         margin: "14px"
       });
       cursorPointer.css({
-        margin: "2px"
+        margin: "6px"
       });
     })
     .mouseleave(function() {
@@ -88,7 +88,7 @@ $(document).ready(function() {
         margin: "0px"
       });
       cursorPointer.css({
-        margin: "18px"
+        margin: "22px"
       });
     });
 
